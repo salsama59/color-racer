@@ -4,72 +4,53 @@ using UnityEngine;
 
 public class CarMovementRecordManager : MonoBehaviour
 {
-    [SerializeField]
-    private bool isRewinding = false;
+    
     private List<PointInTime> pointsInTime;
-    //private Rigidbody2D rigidbody2D;
+    private bool isRecordingMustBeStopped = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.pointsInTime = new List<PointInTime>();
-      //  this.rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
+        this.PointsInTime = new List<PointInTime>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            StartRewind();
-        }
-
-        if (Input.GetKeyUp(KeyCode.Return))
-        {
-            StopRewind();
-        }
-        
+        CarMovementController.OnCarMovementInput += Record;
+        GhostCarMovementController.OnGhostCarMovementRefresh += ExecuteRecord;
+        GhostCarSpawnerManager.OnGhostCarSpawned += DisableRecording;
     }
 
-    private void FixedUpdate()
+    private void OnDisable()
     {
-        if (this.isRewinding)
-        {
-            Rewind();
-        } else
-        {
-            Record();
-        }
+        CarMovementController.OnCarMovementInput -= Record;
+        GhostCarMovementController.OnGhostCarMovementRefresh -= ExecuteRecord;
+        GhostCarSpawnerManager.OnGhostCarSpawned -= DisableRecording;
     }
 
-
-    private void Rewind()
+    private void ExecuteRecord(Transform targetTransform, List<PointInTime> recordsToExecute, int recordIndexToExecute)
     {
-        if(pointsInTime.Count > 0)
+        targetTransform.Translate(recordsToExecute[recordIndexToExecute].TranslationVector);
+        targetTransform.Rotate(recordsToExecute[recordIndexToExecute].RotationVector);
+    }
+
+    public void Record(Vector2 translationVectorTorecord, Vector3 rotationVectorToRecord)
+    {
+        if (!this.isRecordingMustBeStopped)
         {
-            transform.position = pointsInTime[0].Position;
-            transform.rotation = pointsInTime[0].Rotation;
-            pointsInTime.RemoveAt(0);
-        } else
-        {
-            StopRewind();
+            this.PointsInTime.Add(new PointInTime(translationVectorTorecord, rotationVectorToRecord));
         }
     }
 
-    void Record()
+    public void EnableRecording()
     {
-        this.pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+        this.isRecordingMustBeStopped = false;
     }
 
-    public void StartRewind()
+    public void DisableRecording()
     {
-        this.isRewinding = true;
-       // this.rigidbody2D
+        this.isRecordingMustBeStopped = true;
     }
 
-    public void StopRewind()
-    {
-        this.isRewinding = false;
-        // this.rigidbody2D
-    }
+    public List<PointInTime> PointsInTime { get => pointsInTime; set => pointsInTime = value; }
 }
