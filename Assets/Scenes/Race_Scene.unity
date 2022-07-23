@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 1949793646}
   - component: {fileID: 1949793648}
   - component: {fileID: 1949793649}
+  - component: {fileID: 1949793650}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -423,3 +424,16 @@ MonoBehaviour:
   carTranslationSpeed: 5
   carRotationSpeed: 100
   pauseMove: 0
+--- !u!114 &1949793650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949793645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe7b289c7345c24e872f2b6388658de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRewinding: 0
