@@ -14,27 +14,15 @@ public class LapManager : MonoBehaviour
         LapCollider.OnLapFinished += UpdateLap;
     }
 
-
     private void OnDisable()
     {
         LapCollider.OnLapFinished -= UpdateLap;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateLap()
     {
-        this.lapCounter++;
-        this.lapCounterText.text = $"Laps: {this.lapCounter}";
+        this.LapCounter++;
+        this.lapCounterText.text = $"Laps: {this.LapCounter}";
     }
+
+    public int LapCounter { get => lapCounter; set => lapCounter = value; }
 }
