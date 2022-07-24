@@ -18,14 +18,14 @@ public class CarMovementRecordManager : MonoBehaviour
     {
         CarMovementController.OnCarMovementInput += Record;
         GhostCarMovementController.OnGhostCarMovementRefresh += ExecuteRecord;
-        GhostCarSpawnerManager.OnGhostCarSpawned += DisableRecording;
+        GameManager.OnGameOverResultDisplayReady += DisableRecording;
     }
 
     private void OnDisable()
     {
         CarMovementController.OnCarMovementInput -= Record;
         GhostCarMovementController.OnGhostCarMovementRefresh -= ExecuteRecord;
-        GhostCarSpawnerManager.OnGhostCarSpawned -= DisableRecording;
+        GameManager.OnGameOverResultDisplayReady -= DisableRecording;
     }
 
     private void ExecuteRecord(Transform targetTransform, List<PointInTime> recordsToExecute, int recordIndexToExecute)

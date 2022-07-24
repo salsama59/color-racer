@@ -11,8 +11,10 @@ public class CameraMovementManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector2 temporaryCalculatedCameraPosition = Vector2.Lerp(transform.position, target.position, smoothTime);
-
-        transform.position = new Vector3(temporaryCalculatedCameraPosition.x, temporaryCalculatedCameraPosition.y, transform.position.z);
+        if (!GameManager.isGameInPause)
+        {
+            Vector2 temporaryCalculatedCameraPosition = Vector2.Lerp(transform.position, target.position, smoothTime);
+            transform.position = new Vector3(temporaryCalculatedCameraPosition.x, temporaryCalculatedCameraPosition.y, transform.position.z);
+        }  
     }
 }

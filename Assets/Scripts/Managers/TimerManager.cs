@@ -18,36 +18,50 @@ public class TimerManager : MonoBehaviour
     {
         LapCollider.OnLapFinished += ResetCurrentTimer;
         LapCollider.OnLapFinished += UpdateTimerToBeat;
+        LapCollider.OnTimerRequirementCheckOk += IsTimerCheckPasses;
     }
 
     private void OnDisable()
     {
         LapCollider.OnLapFinished -= ResetCurrentTimer;
         LapCollider.OnLapFinished -= UpdateTimerToBeat;
+        LapCollider.OnTimerRequirementCheckOk -= IsTimerCheckPasses;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.temporaryTimeCalculation += Time.deltaTime;
-
-        if (this.temporaryTimeCalculation >= 0.5f)
+        if (!GameManager.isGameInPause)
         {
-            this.timeElapsed += 0.5f;
-            this.temporaryTimeCalculation = 0f;
-        }
+            this.temporaryTimeCalculation += Time.deltaTime;
 
-        timerText.text = $"Time : {this.timeElapsed} seconds";
+            if (this.temporaryTimeCalculation >= 0.5f)
+            {
+                this.TimeElapsed += 0.5f;
+                this.temporaryTimeCalculation = 0f;
+            }
+
+            timerText.text = $"Current time : {this.TimeElapsed} seconds";
+        }
+        
     }
 
     public void ResetCurrentTimer()
     {
-        this.lastTimeElapsed = this.timeElapsed;
-        this.timeElapsed = 0f;
+        this.LastTimeElapsed = this.TimeElapsed;
+        this.TimeElapsed = 0f;
     }
 
     public void UpdateTimerToBeat()
     {
-        lastTimerText.text = $"Time : {this.lastTimeElapsed} seconds";
+        lastTimerText.text = $"Time to beat : {this.LastTimeElapsed} seconds";
     }
+
+    public bool IsTimerCheckPasses()
+    {
+        return this.LastTimeElapsed == 0f || this.TimeElapsed <= this.LastTimeElapsed;
+    }
+
+    public float TimeElapsed { get => timeElapsed; set => timeElapsed = value; }
+    public float LastTimeElapsed { get => lastTimeElapsed; set => lastTimeElapsed = value; }
 }

@@ -12,7 +12,7 @@ public class GhostCarMovementController : MonoBehaviour
 
     void Update()
     {
-        if(OnGhostCarMovementRefresh != null)
+        if(OnGhostCarMovementRefresh != null && !GameManager.isGameInPause)
         {
             OnGhostCarMovementRefresh.Invoke(this.transform, GhostCarMovementRecords, currentRecordIndex);
             currentRecordIndex++;

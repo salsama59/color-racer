@@ -10,40 +10,40 @@ public class CarMovementController : MonoBehaviour
     private float carTranslationSpeed = 5;
     [SerializeField]
     private float carRotationSpeed = 100;
-    [SerializeField]
-    private bool pauseMove = false;
 
     public static event Action<Vector2, Vector3> OnCarMovementInput;
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 translationExecuted = Vector2.zero;
-        Vector3 rotationExecuted = Vector3.zero;
+        if (!GameManager.isGameInPause)
+        {
+            Vector2 translationExecuted = Vector2.zero;
+            Vector3 rotationExecuted = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            //Forward
-            translationExecuted = Vector2.up * carTranslationSpeed * Time.deltaTime;
-            transform.Translate(translationExecuted);
-            //Rotate
-            rotationExecuted = this.RotateCar();
-        }
-        else if (Input.GetKey(KeyCode.Z))
-        {
-            //Backward
-            translationExecuted = Vector2.down * carTranslationSpeed * Time.deltaTime;
-            transform.Translate(translationExecuted);
-            //Rotate
-            rotationExecuted = this.RotateCar();
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                //Forward
+                translationExecuted = Vector2.up * carTranslationSpeed * Time.deltaTime;
+                transform.Translate(translationExecuted);
+                //Rotate
+                rotationExecuted = this.RotateCar();
+            }
+            else if (Input.GetKey(KeyCode.Z))
+            {
+                //Backward
+                translationExecuted = Vector2.down * carTranslationSpeed * Time.deltaTime;
+                transform.Translate(translationExecuted);
+                //Rotate
+                rotationExecuted = this.RotateCar();
+            }
 
-        if (OnCarMovementInput != null)
-        {
-            OnCarMovementInput.Invoke(translationExecuted, rotationExecuted);
+            if (OnCarMovementInput != null)
+            {
+                OnCarMovementInput.Invoke(translationExecuted, rotationExecuted);
+            }
         }
     }
-
 
     private Vector3 RotateCar()
     {
