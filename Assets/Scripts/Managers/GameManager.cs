@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static event Action OnLapFinished;
 
+    public static bool isRaceAlreadyStarted = false;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Return))
         {
-            if(OnLapFinished != null)
-            {
-                OnLapFinished.Invoke();
-            }
+            
             
         }
     }

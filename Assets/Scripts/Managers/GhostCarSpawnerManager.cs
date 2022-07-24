@@ -11,23 +11,23 @@ public class GhostCarSpawnerManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnLapFinished += SpawnGhost;
+        LapCollider.OnLapFinished += SpawnGhost;
     }
 
     private void OnDisable()
     {
-        GameManager.OnLapFinished -= SpawnGhost;
+        LapCollider.OnLapFinished -= SpawnGhost;
     }
 
     public void SpawnGhost()
     {
-        if(OnGhostCarSpawned != null)
+        /*if(OnGhostCarSpawned != null)
         {
             OnGhostCarSpawned.Invoke();
-        }
+        }*/
         GameObject ghostCar = Instantiate(ghostCarModel, Vector2.zero, Quaternion.identity);
         GhostCarMovementController ghostCarMovementControllerScript = ghostCar.AddComponent<GhostCarMovementController>();
-        GameObject carMovementRecordManagerObject = GameObject.FindGameObjectWithTag(TagsConstants.CAR_MOVEMENT_RECORD_MANAGER);
+        GameObject carMovementRecordManagerObject = GameObject.FindGameObjectWithTag(TagsConstants.CAR_MOVEMENT_RECORD_MANAGER_TAG);
         CarMovementRecordManager carMovementRecordManagerScript = carMovementRecordManagerObject.GetComponent<CarMovementRecordManager>();
         ghostCarMovementControllerScript.GhostCarMovementRecords = new List<PointInTime>(carMovementRecordManagerScript.PointsInTime);
         carMovementRecordManagerScript.PointsInTime.Clear();
