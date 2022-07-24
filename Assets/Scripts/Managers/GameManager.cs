@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
     public static bool isRaceAlreadyStarted = false;
     public static bool isGameInPause = false;
 
+    private bool isGameOver = false;
+
     public static event Action OnGameOverResultDisplayReady;
+    public static event Action OnGameReset;
+    public static event Action OnMainMenuReturn;
 
     private void OnEnable()
     {
@@ -29,6 +33,28 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         LapCollider.OnGameOver -= GameOver;
+    }
+
+    private void Update()
+    {
+        if (this.isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.R) && OnGameReset != null)
+            {
+                OnGameReset.Invoke();
+                isGameOver = false;
+                isGameInPause = false;
+                isRaceAlreadyStarted = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && OnMainMenuReturn != null)
+            {
+                OnMainMenuReturn.Invoke();
+                isGameOver = false;
+                isGameInPause = false;
+                isRaceAlreadyStarted = false;
+            }
+        }
     }
 
     public void GameOver()
@@ -54,5 +80,6 @@ public class GameManager : MonoBehaviour
         }
 
         isGameInPause = true;
+        this.isGameOver = true;
     }
 }
