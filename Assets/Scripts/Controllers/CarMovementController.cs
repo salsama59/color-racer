@@ -13,6 +13,17 @@ public class CarMovementController : MonoBehaviour
 
     public static event Action<Vector2, Vector3> OnCarMovementInput;
 
+
+    private void OnEnable()
+    {
+        BonusManager.OnBonusChoice += AddBonusToCar;
+    }
+
+    private void OnDisable()
+    {
+        BonusManager.OnBonusChoice -= AddBonusToCar;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -62,5 +73,22 @@ public class CarMovementController : MonoBehaviour
         }
 
         return executedRotation;
+    }
+
+    public void AddBonusToCar(BonusEnum bonusType, float bonusAmountInPercentage)
+    {
+        switch (bonusType)
+        {
+            case BonusEnum.SPEED:
+                this.carTranslationSpeed += this.carTranslationSpeed * bonusAmountInPercentage / 100f;
+                break;
+            case BonusEnum.ACCELERATION:
+                break;
+            case BonusEnum.MANIABILITY:
+                this.carRotationSpeed += this.carRotationSpeed * bonusAmountInPercentage / 100f;
+                break;
+            default:
+                break;
+        }
     }
 }
