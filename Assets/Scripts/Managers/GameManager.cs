@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI lastTimerText;
     [SerializeField]
-    private TextMeshProUGUI timerToBeatText;
+    private TextMeshProUGUI gameOverReasonText;
     public static bool isRaceAlreadyStarted = false;
     public static bool isGameInPause = false;
 
@@ -28,11 +28,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         LapCollider.OnGameOver += GameOver;
+        FuelManager.OnFuelShortage += GameOver;
     }
 
     private void OnDisable()
     {
         LapCollider.OnGameOver -= GameOver;
+        FuelManager.OnFuelShortage -= GameOver;
     }
 
     private void Update()
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public void GameOver(GameOverReasonEnum gameOverReason)
     {
         GameObject timerManagerGameObject = GameObject.FindGameObjectWithTag(TagsConstants.TIMER_MANAGER_TAG);
         TimerManager timerManagerScript = timerManagerGameObject.GetComponent<TimerManager>();
@@ -70,7 +72,19 @@ public class GameManager : MonoBehaviour
 
         this.lastLapNumberText.text = $"You did {lapManagerScript.LapCounter} laps!!!";
         this.lastTimerText.text = $"Your time was {timerManagerScript.TimeElapsed} seconds";
-        this.timerToBeatText.text = $"Your was'nt able to beat the following time : {timerManagerScript.LastTimeElapsed} seconds";
+
+        switch (gameOverReason)
+        {
+            case GameOverReasonEnum.TIMER:
+                this.gameOverReasonText.text = $"Your was'nt able to beat the following time : {timerManagerScript.LastTimeElapsed} seconds";
+                break;
+            case GameOverReasonEnum.FUEL:
+                this.gameOverReasonText.text = $"Unfortunatelly your fuel level reached zero";
+                break;
+            default:
+                break;
+        }
+        
         this.gameOverPanel.SetActive(true);
         this.gameMainUiPanel.SetActive(false);
 
