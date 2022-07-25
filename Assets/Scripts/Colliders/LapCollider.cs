@@ -10,6 +10,7 @@ public class LapCollider : MonoBehaviour
     public static event Func<bool> OnTimerRequirementCheckOk;
     public static event Action OnGameOver;
     public static event Action OnBonusChoiceDisplay;
+    public static event Action<bool> OnFuelRegenerationBonusEnd;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,11 @@ public class LapCollider : MonoBehaviour
                 if(OnTimerRequirementCheckOk.Invoke())
                 {
                     OnLapFinished.Invoke();
+
+                    if(OnFuelRegenerationBonusEnd != null)
+                    {
+                        OnFuelRegenerationBonusEnd.Invoke(false);
+                    }
 
                     if(OnBonusChoiceDisplay != null)
                     {
