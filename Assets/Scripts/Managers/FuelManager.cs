@@ -9,8 +9,6 @@ public class FuelManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI fuelText;
-
-    [SerializeField]
     private float fuel = 100f;
     private float maxFuel = 100f;
     private static float FUEL_CONSUMPTION_PERCENTAGE = 0.25f;
@@ -21,6 +19,8 @@ public class FuelManager : MonoBehaviour
     private float amountOfFuelRegenerated = 0f;
 
     private float timeElapsed = 0;
+
+    public static event Action<GameOverReasonEnum> OnFuelShortage;
 
     private void OnEnable()
     {
@@ -56,6 +56,11 @@ public class FuelManager : MonoBehaviour
                 }
 
                 this.timeElapsed = 0f;
+
+                if(this.fuel == 0f && OnFuelShortage != null)
+                {
+                    OnFuelShortage.Invoke(GameOverReasonEnum.FUEL);
+                }
             }
             
         }

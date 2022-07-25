@@ -8,7 +8,7 @@ public class LapCollider : MonoBehaviour
 
     public static event Action OnLapFinished;
     public static event Func<bool> OnTimerRequirementCheckOk;
-    public static event Action OnGameOver;
+    public static event Action<GameOverReasonEnum> OnGameOver;
     public static event Action OnBonusChoiceDisplay;
     public static event Action<bool> OnFuelRegenerationBonusEnd;
 
@@ -37,7 +37,7 @@ public class LapCollider : MonoBehaviour
                 {
                     if(OnGameOver != null)
                     {
-                        OnGameOver.Invoke();
+                        OnGameOver.Invoke(GameOverReasonEnum.TIMER);
                     }
                 }
                
