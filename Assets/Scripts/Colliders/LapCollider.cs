@@ -9,6 +9,7 @@ public class LapCollider : MonoBehaviour
     public static event Action OnLapFinished;
     public static event Func<bool> OnTimerRequirementCheckOk;
     public static event Action OnGameOver;
+    public static event Action OnBonusChoiceDisplay;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +21,12 @@ public class LapCollider : MonoBehaviour
                 if(OnTimerRequirementCheckOk.Invoke())
                 {
                     OnLapFinished.Invoke();
+
+                    if(OnBonusChoiceDisplay != null)
+                    {
+                        OnBonusChoiceDisplay.Invoke();
+                    }
+
                 } else
                 {
                     if(OnGameOver != null)
