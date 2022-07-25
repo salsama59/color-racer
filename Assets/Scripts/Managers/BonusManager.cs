@@ -9,7 +9,7 @@ public class BonusManager : MonoBehaviour
     private GameObject bonusChoicePanel; 
     public static event Action<BonusEnum, float> OnBonusChoice;
     private static float SPEED_BONUS_AMOUNT = 3f;
-    private static float ACCELERATION_BONUS_AMOUNT = 2f;
+    private static float FUEL_REGENERATION_BONUS_AMOUNT = 0.25f;
     private static float MANIABILITY_BONUS_AMOUNT = 5f;
 
 
@@ -40,9 +40,9 @@ public class BonusManager : MonoBehaviour
         this.AddBonus(BonusEnum.SPEED, SPEED_BONUS_AMOUNT);
     }
 
-    public void AddAccelerationBonus()
+    public void AddFuelRegenerationBonus()
     {
-        this.AddBonus(BonusEnum.ACCELERATION, ACCELERATION_BONUS_AMOUNT);
+        this.AddBonus(BonusEnum.FUEL_REGENERATION, FUEL_REGENERATION_BONUS_AMOUNT);
     }
 
     public void AddManiabilityBonus()

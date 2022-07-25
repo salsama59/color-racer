@@ -10,9 +10,8 @@ public class CarMovementController : MonoBehaviour
     private float carTranslationSpeed = 5;
     [SerializeField]
     private float carRotationSpeed = 100;
-
     public static event Action<Vector2, Vector3> OnCarMovementInput;
-
+    public static event Action<float> OnCarFuelBonusAttribution;
 
     private void OnEnable()
     {
@@ -34,6 +33,7 @@ public class CarMovementController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.A))
             {
+                FuelManager.isEngineOn = true;
                 //Forward
                 translationExecuted = Vector2.up * carTranslationSpeed * Time.deltaTime;
                 transform.Translate(translationExecuted);
@@ -42,11 +42,15 @@ public class CarMovementController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Z))
             {
+                FuelManager.isEngineOn = true;
                 //Backward
                 translationExecuted = Vector2.down * carTranslationSpeed * Time.deltaTime;
                 transform.Translate(translationExecuted);
                 //Rotate
                 rotationExecuted = this.RotateCar();
+            } else
+            {
+                FuelManager.isEngineOn = false;
             }
 
             if (OnCarMovementInput != null)
@@ -82,7 +86,11 @@ public class CarMovementController : MonoBehaviour
             case BonusEnum.SPEED:
                 this.carTranslationSpeed += this.carTranslationSpeed * bonusAmountInPercentage / 100f;
                 break;
-            case BonusEnum.ACCELERATION:
+            case BonusEnum.FUEL_REGENERATION:
+                if(OnCarFuelBonusAttribution != null)
+                {
+                    OnCarFuelBonusAttribution.Invoke(bonusAmountInPercentage);
+                }
                 break;
             case BonusEnum.MANIABILITY:
                 this.carRotationSpeed += this.carRotationSpeed * bonusAmountInPercentage / 100f;
