@@ -16,11 +16,15 @@ public class CarMovementController : MonoBehaviour
     private void OnEnable()
     {
         BonusManager.OnBonusChoice += AddBonusToCar;
+        ObstacleCollider.OnPlayerCarSlowingObstacleHit += RemoveSpeed;
+        ObstacleCollider.OnPlayerCarSlowingObstacleExit += AddSpeed;
     }
 
     private void OnDisable()
     {
         BonusManager.OnBonusChoice -= AddBonusToCar;
+        ObstacleCollider.OnPlayerCarSlowingObstacleHit -= RemoveSpeed;
+        ObstacleCollider.OnPlayerCarSlowingObstacleExit -= AddSpeed;
     }
 
     // Update is called once per frame
@@ -79,12 +83,22 @@ public class CarMovementController : MonoBehaviour
         return executedRotation;
     }
 
+    public void AddSpeed(float amountToAddInPercentage)
+    {
+        this.carTranslationSpeed += this.carTranslationSpeed * amountToAddInPercentage / 100f;
+    }
+
+    public void RemoveSpeed(float amountToRemoveInPercentage)
+    {
+        this.carTranslationSpeed -= this.carTranslationSpeed * amountToRemoveInPercentage / 100f;
+    }
+
     public void AddBonusToCar(BonusEnum bonusType, float bonusAmountInPercentage)
     {
         switch (bonusType)
         {
             case BonusEnum.SPEED:
-                this.carTranslationSpeed += this.carTranslationSpeed * bonusAmountInPercentage / 100f;
+                this.AddSpeed(bonusAmountInPercentage);
                 break;
             case BonusEnum.FUEL_REGENERATION:
                 if(OnCarFuelBonusAttribution != null)
