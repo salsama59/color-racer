@@ -74,14 +74,14 @@ public class FuelManager : MonoBehaviour
     public void AddFuel(float amountInpercentage)
     {
         this.fuel += amountInpercentage * this.maxFuel / 100;
-        Mathf.Clamp(this.fuel, 0f, this.maxFuel);
+        this.fuel = Mathf.Clamp(this.fuel, 0f, this.maxFuel);
         this.UpdateFuelDisplay();
     }
 
     public void SubstractFuel(float amountInpercentage)
     {
         this.fuel -= amountInpercentage * this.maxFuel / 100;
-        Mathf.Clamp(this.fuel, 0f, this.maxFuel);
+        this.fuel = Mathf.Clamp(this.fuel, 0f, this.maxFuel);
         this.UpdateFuelDisplay();
     }
 

@@ -11,6 +11,7 @@ public class LapCollider : MonoBehaviour
     public static event Action<GameOverReasonEnum> OnGameOver;
     public static event Action OnBonusChoiceDisplay;
     public static event Action<bool> OnFuelRegenerationBonusEnd;
+    public static event Action<bool> OnDamageRepairBonusEnd;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,7 +29,12 @@ public class LapCollider : MonoBehaviour
                         OnFuelRegenerationBonusEnd.Invoke(false);
                     }
 
-                    if(OnBonusChoiceDisplay != null)
+                    if (OnDamageRepairBonusEnd != null)
+                    {
+                        OnDamageRepairBonusEnd.Invoke(false);
+                    }
+
+                    if (OnBonusChoiceDisplay != null)
                     {
                         OnBonusChoiceDisplay.Invoke();
                     }
