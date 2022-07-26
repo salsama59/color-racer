@@ -8,11 +8,7 @@ public class BonusManager : MonoBehaviour
     [SerializeField]
     private GameObject bonusChoicePanel; 
     public static event Action<BonusEnum, float> OnBonusChoice;
-    private static float SPEED_BONUS_AMOUNT = 3f;
-    private static float FUEL_REGENERATION_BONUS_AMOUNT = 0.25f;
-    private static float MANIABILITY_BONUS_AMOUNT = 5f;
-
-
+   
     private void OnEnable()
     {
         LapCollider.OnBonusChoiceDisplay += DisplayBonusUi;
@@ -23,31 +19,24 @@ public class BonusManager : MonoBehaviour
         LapCollider.OnBonusChoiceDisplay -= DisplayBonusUi;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AddSpeedBonus()
     {
-        this.AddBonus(BonusEnum.SPEED, SPEED_BONUS_AMOUNT);
+        this.AddBonus(BonusEnum.SPEED, BonusConstants.SPEED_BONUS_AMOUNT);
     }
 
     public void AddFuelRegenerationBonus()
     {
-        this.AddBonus(BonusEnum.FUEL_REGENERATION, FUEL_REGENERATION_BONUS_AMOUNT);
+        this.AddBonus(BonusEnum.FUEL_REGENERATION, BonusConstants.FUEL_REGENERATION_BONUS_AMOUNT);
     }
 
     public void AddManiabilityBonus()
     {
-        this.AddBonus(BonusEnum.MANIABILITY, MANIABILITY_BONUS_AMOUNT);
+        this.AddBonus(BonusEnum.MANIABILITY, BonusConstants.MANIABILITY_BONUS_AMOUNT);
+    }
+
+    public void AddDamageRepairBonus()
+    {
+        this.AddBonus(BonusEnum.DAMAGE_REPAIR, BonusConstants.DAMAGE_REPAIR_BONUS_AMOUNT);
     }
 
     public void DisplayBonusUi()
@@ -64,7 +53,11 @@ public class BonusManager : MonoBehaviour
 
     private void AddBonus(BonusEnum bonusType, float bonusAmountInPercentage)
     {
-        OnBonusChoice.Invoke(bonusType, bonusAmountInPercentage);
+        if(OnBonusChoice != null)
+        {
+            OnBonusChoice.Invoke(bonusType, bonusAmountInPercentage);
+        }
+        
         this.HideBonusUi();
     }
 }

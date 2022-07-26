@@ -29,12 +29,14 @@ public class GameManager : MonoBehaviour
     {
         LapCollider.OnGameOver += GameOver;
         FuelManager.OnFuelShortage += GameOver;
+        DamageManager.OnDamageBeyondRepair += GameOver;
     }
 
     private void OnDisable()
     {
         LapCollider.OnGameOver -= GameOver;
         FuelManager.OnFuelShortage -= GameOver;
+        DamageManager.OnDamageBeyondRepair -= GameOver;
     }
 
     private void Update()
@@ -80,6 +82,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameOverReasonEnum.FUEL:
                 this.gameOverReasonText.text = $"Unfortunatelly your fuel level reached zero";
+                break;
+            case GameOverReasonEnum.DAMAGE:
+                this.gameOverReasonText.text = $"Unfortunatelly your car damage reached 100%";
                 break;
             default:
                 break;

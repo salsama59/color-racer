@@ -12,6 +12,7 @@ public class CarMovementController : MonoBehaviour
     private float carRotationSpeed = 100;
     public static event Action<Vector2, Vector3> OnCarMovementInput;
     public static event Action<float> OnCarFuelBonusAttribution;
+    public static event Action<float> OnCarDamageRepairBonusAttribution;
 
     private void OnEnable()
     {
@@ -108,6 +109,12 @@ public class CarMovementController : MonoBehaviour
                 break;
             case BonusEnum.MANIABILITY:
                 this.carRotationSpeed += this.carRotationSpeed * bonusAmountInPercentage / 100f;
+                break;
+            case BonusEnum.DAMAGE_REPAIR:
+                if (OnCarDamageRepairBonusAttribution != null)
+                {
+                    OnCarDamageRepairBonusAttribution.Invoke(bonusAmountInPercentage);
+                }
                 break;
             default:
                 break;
