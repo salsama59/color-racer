@@ -7,21 +7,9 @@ public class GhostCollider : MonoBehaviour
 {
     public static event Action<float> OnPlayerFuelDamage;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(OnPlayerFuelDamage != null)
+        if(collision.gameObject.CompareTag(TagsConstants.PLAYER_TAG) && OnPlayerFuelDamage != null)
         {
             OnPlayerFuelDamage.Invoke(GhostConstants.GHOST_FUEL_DAMAGE_PERCENTAGE);
         }
