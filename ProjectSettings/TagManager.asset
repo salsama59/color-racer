@@ -9,6 +9,7 @@ TagManager:
   - LapManager
   - DamagingObstacle
   - SlowingObstacle
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class LapCollider : MonoBehaviour
 {
 
     public static event Action OnLapFinished;
+    public static event Func<bool> OnLapAuthenticityCheckOk;
     public static event Func<bool> OnTimerRequirementCheckOk;
     public static event Action<GameOverReasonEnum> OnGameOver;
     public static event Action OnBonusChoiceDisplay;
@@ -22,23 +23,25 @@ public class LapCollider : MonoBehaviour
 
                 if(OnTimerRequirementCheckOk.Invoke())
                 {
-                    OnLapFinished.Invoke();
-
-                    if(OnFuelRegenerationBonusEnd != null)
+                    if (OnLapAuthenticityCheckOk != null && OnLapAuthenticityCheckOk.Invoke())
                     {
-                        OnFuelRegenerationBonusEnd.Invoke(false);
-                    }
+                        OnLapFinished.Invoke();
 
-                    if (OnDamageRepairBonusEnd != null)
-                    {
-                        OnDamageRepairBonusEnd.Invoke(false);
-                    }
+                        if (OnFuelRegenerationBonusEnd != null)
+                        {
+                            OnFuelRegenerationBonusEnd.Invoke(false);
+                        }
 
-                    if (OnBonusChoiceDisplay != null)
-                    {
-                        OnBonusChoiceDisplay.Invoke();
-                    }
+                        if (OnDamageRepairBonusEnd != null)
+                        {
+                            OnDamageRepairBonusEnd.Invoke(false);
+                        }
 
+                        if (OnBonusChoiceDisplay != null)
+                        {
+                            OnBonusChoiceDisplay.Invoke();
+                        }
+                    }
                 } else
                 {
                     if(OnGameOver != null)
