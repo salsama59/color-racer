@@ -13,6 +13,12 @@ public class CarMovementController : MonoBehaviour
     public static event Action<Vector2, Vector3> OnCarMovementInput;
     public static event Action<float> OnCarFuelBonusAttribution;
     public static event Action<float> OnCarDamageRepairBonusAttribution;
+    private CarSpriteManager carSpriteManager;
+
+    private void Start()
+    {
+        this.carSpriteManager = this.gameObject.GetComponent<CarSpriteManager>();
+    }
 
     private void OnEnable()
     {
@@ -119,5 +125,6 @@ public class CarMovementController : MonoBehaviour
             default:
                 break;
         }
+        this.carSpriteManager.UpdateCarSprite(bonusType);
     }
 }

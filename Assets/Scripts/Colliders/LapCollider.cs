@@ -13,6 +13,7 @@ public class LapCollider : MonoBehaviour
     public static event Action OnBonusChoiceDisplay;
     public static event Action<bool> OnFuelRegenerationBonusEnd;
     public static event Action<bool> OnDamageRepairBonusEnd;
+    public static event Action OnRaceBegining;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,6 +51,9 @@ public class LapCollider : MonoBehaviour
                     }
                 }
                
+            } else if (OnRaceBegining != null && !GameManager.isRaceAlreadyStarted)
+            {
+                OnRaceBegining.Invoke();
             }
         }
     }
