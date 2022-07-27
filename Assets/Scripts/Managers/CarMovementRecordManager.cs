@@ -36,17 +36,29 @@ public class CarMovementRecordManager : MonoBehaviour
         GhostCarSpawnerManager.OnPlayerCarReferenceSettingsUpdate -= SaveReferencePlayerSettings;
     }
 
-    private void ExecuteRecord(Transform targetTransform, List<PointInTime> recordsToExecute, int recordIndexToExecute)
+    private void ExecuteRecord(Rigidbody2D rigidBody2D, List<PointInTime> recordsToExecute, int recordIndexToExecute)
     {
-        targetTransform.Translate(recordsToExecute[recordIndexToExecute].TranslationVector);
-        targetTransform.Rotate(recordsToExecute[recordIndexToExecute].RotationVector);
+        PointInTime currentRecord = recordsToExecute[recordIndexToExecute];
+
+        //Simulate the engine force operations
+        rigidBody2D.drag = currentRecord.DragValue;
+        if (currentRecord.IsForceApplied)
+        {
+            rigidBody2D.AddForce(currentRecord.ForceVector, ForceMode2D.Force);
+        }
+
+        //Simulate the orthogonnal velocity adjustments
+        rigidBody2D.velocity = currentRecord.VelocityVector;
+
+        //Simulate the sterring operations
+        rigidBody2D.MoveRotation(currentRecord.RotationAngle);
     }
 
-    public void Record(Vector2 translationVectorTorecord, Vector3 rotationVectorToRecord)
+    public void Record(PointInTime pointInTime)
     {
         if (!this.isRecordingMustBeStopped)
         {
-            this.PointsInTime.Add(new PointInTime(translationVectorTorecord, rotationVectorToRecord));
+            this.PointsInTime.Add(pointInTime);
         }
     }
 

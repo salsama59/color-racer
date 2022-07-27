@@ -7,4 +7,5 @@ public class TagsConstants
     public static string DAMAGING_OBSTACLE_TAG = "DamagingObstacle";
     public static string SLOWING_OBSTACLE_TAG = "SlowingObstacle";
     public static string CHECKPOINT_TAG = "Checkpoint";
+    public static string GHOST_CAR_TAG = "GhostCar";
 }
