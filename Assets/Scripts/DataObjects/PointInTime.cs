@@ -3,15 +3,26 @@ using UnityEngine;
 
 public class PointInTime
 {
-    private Vector2 translationVector;
-    private Vector3 rotationVector;
+    private Vector2 forceVector;
+    private float rotationAngle;
+    private float dragValue;
+    private Vector2 velocityVector;
+    private bool isForceApplied;
 
-    public PointInTime(Vector2 translationVector, Vector3 rotationVector)
+    public PointInTime() { }
+
+    public PointInTime(Vector2 forceVector, float rotationAngle, Vector2 velocityVector, float dragValue, bool isForceApplied)
     {
-        this.TranslationVector = translationVector;
-        this.RotationVector = rotationVector;
+        this.ForceVector = forceVector;
+        this.RotationAngle = rotationAngle;
+        this.VelocityVector = velocityVector;
+        this.DragValue = dragValue;
+        this.IsForceApplied = isForceApplied;
     }
 
-    public Vector2 TranslationVector { get => translationVector; set => translationVector = value; }
-    public Vector3 RotationVector { get => rotationVector; set => rotationVector = value; }
+    public Vector2 ForceVector { get => forceVector; set => forceVector = value; }
+    public float RotationAngle { get => rotationAngle; set => rotationAngle = value; }
+    public float DragValue { get => dragValue; set => dragValue = value; }
+    public Vector2 VelocityVector { get => velocityVector; set => velocityVector = value; }
+    public bool IsForceApplied { get => isForceApplied; set => isForceApplied = value; }
 }

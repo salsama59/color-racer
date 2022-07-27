@@ -10,13 +10,20 @@ public class GhostCarMovementController : MonoBehaviour
     private Vector3 ghostInitialPosition;
     private Quaternion ghostInitialRotation;
 
-    public static event Action<Transform, List<PointInTime>, int> OnGhostCarMovementRefresh;
+    public static event Action<Rigidbody2D, List<PointInTime>, int> OnGhostCarMovementRefresh;
+    private Rigidbody2D ghostCarRigidBody;
 
-    void Update()
+
+    private void Awake()
+    {
+        this.ghostCarRigidBody = this.gameObject.GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
     {
         if(OnGhostCarMovementRefresh != null && !GameManager.isGameInPause)
         {
-            OnGhostCarMovementRefresh.Invoke(this.transform, GhostCarMovementRecords, currentRecordIndex);
+            OnGhostCarMovementRefresh.Invoke(ghostCarRigidBody, GhostCarMovementRecords, currentRecordIndex);
             currentRecordIndex++;
 
             if (currentRecordIndex == GhostCarMovementRecords.Count)
