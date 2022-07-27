@@ -8,7 +8,8 @@ public class BonusManager : MonoBehaviour
     [SerializeField]
     private GameObject bonusChoicePanel; 
     public static event Action<BonusEnum, float> OnBonusChoice;
-   
+    public static event Action OnCarsMotionResume;
+
     private void OnEnable()
     {
         LapCollider.OnBonusChoiceDisplay += DisplayBonusUi;
@@ -59,5 +60,11 @@ public class BonusManager : MonoBehaviour
         }
         
         this.HideBonusUi();
+
+        //The bonus choice resume the game after the lap
+        if(OnCarsMotionResume != null)
+        {
+            OnCarsMotionResume.Invoke();
+        }
     }
 }

@@ -23,6 +23,13 @@ public class CarMovementController : MonoBehaviour
     private CarInputHandler carInputHandler;
     private float velocityDotProduct;
 
+    private Vector2 carVelocitySaved;
+    private float carAngularVelocitySaved;
+    private float carDragSaved;
+    private float carAngularDragSaved;
+    
+    
+
     private void Start()
     {
         this.carSpriteManager = this.gameObject.GetComponent<CarSpriteManager>();
@@ -170,5 +177,23 @@ public class CarMovementController : MonoBehaviour
                 break;
         }
         this.carSpriteManager.UpdateCarSprite(bonusType);
+    }
+
+    public void StopCarMotion()
+    {
+        this.carVelocitySaved = new Vector2(this.carRigidBody2D.velocity.x, this.carRigidBody2D.velocity.y);
+        this.carAngularVelocitySaved = this.carRigidBody2D.angularVelocity;
+        this.carDragSaved = this.carRigidBody2D.drag;
+        this.carAngularDragSaved = this.carRigidBody2D.angularDrag;
+        this.carRigidBody2D.Sleep();
+    }
+
+    public void ResumeCarMotion()
+    {
+        this.carRigidBody2D.WakeUp();
+        this.carRigidBody2D.velocity = this.carVelocitySaved;
+        this.carRigidBody2D.angularVelocity = this.carAngularVelocitySaved;
+        this.carRigidBody2D.drag = this.carDragSaved;
+        this.carRigidBody2D.angularDrag = this.carAngularDragSaved;
     }
 }

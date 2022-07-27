@@ -14,6 +14,7 @@ public class LapCollider : MonoBehaviour
     public static event Action<bool> OnFuelRegenerationBonusEnd;
     public static event Action<bool> OnDamageRepairBonusEnd;
     public static event Action OnRaceBegining;
+    public static event Action OnCarsMotionStop;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,6 +27,11 @@ public class LapCollider : MonoBehaviour
                 {
                     if (OnLapAuthenticityCheckOk != null && OnLapAuthenticityCheckOk.Invoke())
                     {
+                        if(OnCarsMotionStop != null)
+                        {
+                            OnCarsMotionStop.Invoke();
+                        }
+
                         OnLapFinished.Invoke();
 
                         if (OnFuelRegenerationBonusEnd != null)

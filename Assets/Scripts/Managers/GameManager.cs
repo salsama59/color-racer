@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
         LapCollider.OnGameOver += GameOver;
         FuelManager.OnFuelShortage += GameOver;
         DamageManager.OnDamageBeyondRepair += GameOver;
+        LapCollider.OnCarsMotionStop += StopCarsMotion;
+        BonusManager.OnCarsMotionResume += ResumeCarsMotion;
     }
 
     private void OnDisable()
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
         LapCollider.OnGameOver -= GameOver;
         FuelManager.OnFuelShortage -= GameOver;
         DamageManager.OnDamageBeyondRepair -= GameOver;
+        LapCollider.OnCarsMotionStop -= StopCarsMotion;
+        BonusManager.OnCarsMotionResume -= ResumeCarsMotion;
     }
 
     private void Update()
@@ -100,5 +105,44 @@ public class GameManager : MonoBehaviour
 
         isGameInPause = true;
         this.isGameOver = true;
+
+        this.StopCarsMotion();
+    }
+
+    public void StopCarsMotion()
+    {
+        GameObject playerCarGameObject = GameObject.FindGameObjectWithTag(TagsConstants.PLAYER_TAG);
+        CarMovementController carMovementControllerScript = playerCarGameObject.GetComponent<CarMovementController>();
+        carMovementControllerScript.StopCarMotion();
+
+        List<GhostCarMovementController> ghostCarMovementControllerScripts = GameObject
+            .FindGameObjectsWithTag(TagsConstants.GHOST_CAR_TAG)
+            .Select(ghostCarGameObject => {
+                return ghostCarGameObject.GetComponent<GhostCarMovementController>();
+            }).ToList();
+
+        foreach (GhostCarMovementController ghostCarMovementControllerScript in ghostCarMovementControllerScripts)
+        {
+            ghostCarMovementControllerScript.StopGhostCarMotion();
+        }
+
+    }
+
+    public void ResumeCarsMotion()
+    {
+        GameObject playerCarGameObject = GameObject.FindGameObjectWithTag(TagsConstants.PLAYER_TAG);
+        CarMovementController carMovementControllerScript = playerCarGameObject.GetComponent<CarMovementController>();
+        carMovementControllerScript.ResumeCarMotion();
+
+        List<GhostCarMovementController> ghostCarMovementControllerScripts = GameObject
+            .FindGameObjectsWithTag(TagsConstants.GHOST_CAR_TAG)
+            .Select(ghostCarGameObject => { 
+                return ghostCarGameObject.GetComponent<GhostCarMovementController>();
+            }).ToList();
+
+        foreach (GhostCarMovementController ghostCarMovementControllerScript in ghostCarMovementControllerScripts)
+        {
+            ghostCarMovementControllerScript.ResumeGhostCarMotion();
+        }
     }
 }
