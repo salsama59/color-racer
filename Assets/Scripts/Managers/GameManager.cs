@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public static event Action OnGameReset;
     public static event Action OnMainMenuReturn;
 
+    public static bool isRacePreparationDone = false;
+
     private void OnEnable()
     {
         LapCollider.OnGameOver += GameOver;
@@ -51,17 +53,13 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) && OnGameReset != null)
             {
                 OnGameReset.Invoke();
-                isGameOver = false;
-                isGameInPause = false;
-                isRaceAlreadyStarted = false;
+                this.ResetGameSettings();
             }
 
             if (Input.GetKeyDown(KeyCode.Escape) && OnMainMenuReturn != null)
             {
                 OnMainMenuReturn.Invoke();
-                isGameOver = false;
-                isGameInPause = false;
-                isRaceAlreadyStarted = false;
+                this.ResetGameSettings();
             }
         }
     }
@@ -145,4 +143,13 @@ public class GameManager : MonoBehaviour
             ghostCarMovementControllerScript.ResumeGhostCarMotion();
         }
     }
+
+    private void ResetGameSettings()
+    {
+        isGameOver = false;
+        isGameInPause = false;
+        isRaceAlreadyStarted = false;
+        isRacePreparationDone = false;
+    }
+
 }

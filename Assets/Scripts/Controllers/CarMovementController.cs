@@ -52,7 +52,7 @@ public class CarMovementController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (!GameManager.isGameInPause)
+        if (!GameManager.isGameInPause && GameManager.isRacePreparationDone)
         {
            PointInTime pointInTime = new PointInTime();
            this.ApplyEngineForce(pointInTime);

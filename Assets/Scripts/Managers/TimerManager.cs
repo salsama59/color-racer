@@ -29,11 +29,11 @@ public class TimerManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (!GameManager.isGameInPause)
+        if (!GameManager.isGameInPause && GameManager.isRacePreparationDone)
         {
-            this.temporaryTimeCalculation += Time.deltaTime;
+            this.temporaryTimeCalculation += Time.fixedDeltaTime;
 
             if (this.temporaryTimeCalculation >= 0.5f)
             {
