@@ -27,12 +27,14 @@ public class CarMovementController : MonoBehaviour
     private float carAngularVelocitySaved;
     private float carDragSaved;
     private float carAngularDragSaved;
-    
-    
+    private Animator carAnaimator;
+
+
 
     private void Start()
     {
         this.carSpriteManager = this.gameObject.GetComponent<CarSpriteManager>();
+        this.carAnaimator = this.gameObject.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -64,6 +66,7 @@ public class CarMovementController : MonoBehaviour
                 OnCarMovementInput.Invoke(pointInTime);
            }
         }
+        this.carAnaimator.SetBool("IsCarRunning", GameManager.isRacePreparationDone);
     }
 
     private void ApplyEngineForce(PointInTime pointInTime)
