@@ -44,7 +44,15 @@ public class RaceStartManager : MonoBehaviour
         {
             starterText.text = "GO!!";
             count = 3;
+            GameManager.isRacePreparationDone = true;
+            StartCoroutine(this.HideCountdown());
         }
         
+    }
+
+    private IEnumerator HideCountdown()
+    {
+        yield return new WaitForSeconds(1f);
+        this.starterText.gameObject.SetActive(false);
     }
 }

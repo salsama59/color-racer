@@ -22,11 +22,11 @@ public class StarterLightManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!this.isStartPhaseFinished)
         {
-            this.elapsedTime += Time.deltaTime;
+            this.elapsedTime += Time.fixedDeltaTime;
 
             if (elapsedTime >= 1f)
             {
