@@ -19,9 +19,54 @@ public class CarSpriteManager : MonoBehaviour
         GhostCarSpawnerManager.OnghostSpawned -= GetCarCurrentSprite;
     }
 
-    public void UpdateCarSprite(BonusEnum currentCarBonus)
+    public void UpdateCarRunningAnimation(BonusEnum currentCarBonus, Animator carAnimator)
     {
-        this.carSpriteRenderer.sprite = this.carSpriteList[(int)currentCarBonus];
+        string animationConditionName = null;
+
+        //this.carSpriteRenderer.sprite = this.carSpriteList[(int)currentCarBonus];
+        switch (currentCarBonus)
+        {
+            case BonusEnum.SPEED:
+                //Blue
+                animationConditionName = "HasBlueBonus";
+                break;
+            case BonusEnum.DAMAGE_REPAIR:
+                //Orange
+                animationConditionName = "HasOrangeBonus";
+                break;
+            case BonusEnum.FUEL_REGENERATION:
+                //Red
+                animationConditionName = "HasRedBonus";
+                break;
+            case BonusEnum.MANIABILITY:
+                //Green
+                animationConditionName = "HasGreenBonus";
+                break;
+        }
+
+        carAnimator.SetBool(animationConditionName, true);
+        carAnimator.SetBool("IsDefaultCar", false);
+        this.DeactivateOtherBonusAnimations(animationConditionName, carAnimator);
+    }
+
+
+    private void DeactivateOtherBonusAnimations(string conditionNameToSkip, Animator carAnimator)
+    {
+        List<string> animationConditionNames = new List<string>() {
+            "HasBlueBonus",
+            "HasOrangeBonus",
+            "HasRedBonus",
+            "HasGreenBonus"
+        };
+
+        foreach (string animationConditionName in animationConditionNames)
+        {
+            if(animationConditionName != conditionNameToSkip)
+            {
+                carAnimator.SetBool(animationConditionName, false);
+            }
+        }
+
     }
 
     public Sprite GetCarCurrentSprite()
