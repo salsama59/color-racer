@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 772046097302195732}
   - component: {fileID: 1655182236790702386}
   - component: {fileID: 4670777882206991480}
+  - component: {fileID: 4017184957144027854}
   m_Layer: 6
   m_Name: Ghost
   m_TagString: GhostCar
@@ -144,3 +145,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6343479e630441943a5a5ab0ace4b0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4017184957144027854
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772046097302195733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 466aa0d351bc868489ba8c96c5ef0c3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

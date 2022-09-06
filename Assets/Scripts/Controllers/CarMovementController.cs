@@ -12,7 +12,7 @@ public class CarMovementController : MonoBehaviour
     public static event Action<PointInTime> OnCarMovementInput;
     public static event Action<float> OnCarFuelBonusAttribution;
     public static event Action<float> OnCarDamageRepairBonusAttribution;
-    private CarSpriteManager carSpriteManager;
+    private CarAnimationManager carSpriteManager;
     [SerializeField]
     private Rigidbody2D carRigidBody2D;
     private float rotationAngle = 0f;
@@ -27,12 +27,14 @@ public class CarMovementController : MonoBehaviour
     private float carAngularVelocitySaved;
     private float carDragSaved;
     private float carAngularDragSaved;
-    
-    
+    private Animator carAnimator;
+
+
 
     private void Start()
     {
-        this.carSpriteManager = this.gameObject.GetComponent<CarSpriteManager>();
+        this.carSpriteManager = this.gameObject.GetComponent<CarAnimationManager>();
+        this.carAnimator = this.gameObject.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -64,6 +66,7 @@ public class CarMovementController : MonoBehaviour
                 OnCarMovementInput.Invoke(pointInTime);
            }
         }
+        this.carAnimator.SetBool("IsCarRunning", GameManager.isRacePreparationDone);
     }
 
     private void ApplyEngineForce(PointInTime pointInTime)
@@ -176,7 +179,7 @@ public class CarMovementController : MonoBehaviour
             default:
                 break;
         }
-        this.carSpriteManager.UpdateCarSprite(bonusType);
+        this.carSpriteManager.UpdateCarRunningAnimation(bonusType, this.carAnimator);
     }
 
     public void StopCarMotion()
