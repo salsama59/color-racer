@@ -7,8 +7,9 @@ public class GhostCarSpawnerManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject ghostCarModel;
-    public static event Func<Sprite> OnghostSpawned;
+    public static event Func<string> OnghostSpawned;
     public static event Action OnPlayerCarReferenceSettingsUpdate;
+    public static event Action<Animator, string> OnCarAnimationChange;
 
     private void OnEnable()
     {
@@ -32,10 +33,21 @@ public class GhostCarSpawnerManager : MonoBehaviour
 
         ghostCarMovementControllerScript.GhostCarMovementRecords = new List<PointInTime>(carMovementRecordManagerScript.PointsInTime);
         carMovementRecordManagerScript.PointsInTime.Clear();
-        if(OnghostSpawned != null)
+        if(OnghostSpawned != null && OnCarAnimationChange != null)
         {
-            SpriteRenderer ghostCarSpriteRenderer = ghostCar.GetComponent<SpriteRenderer>();
-            ghostCarSpriteRenderer.sprite = OnghostSpawned.Invoke();
+            Animator ghostCarAnimator = ghostCar.GetComponent<Animator>();
+            string animationName = OnghostSpawned.Invoke();
+
+            if(animationName == null)
+            {
+                ghostCarAnimator.SetBool("IsDefaultCar", true);
+                ghostCarAnimator.SetBool("IsCarRunning", true);
+            } else
+            {
+                ghostCarAnimator.SetBool("IsDefaultCar", true);
+                ghostCarAnimator.SetBool("IsCarRunning", true);
+                OnCarAnimationChange.Invoke(ghostCarAnimator, animationName);
+            }
         }
 
         if(OnPlayerCarReferenceSettingsUpdate != null)

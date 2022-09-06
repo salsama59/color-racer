@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSpriteManager : MonoBehaviour
+public class CarAnimationManager : MonoBehaviour
 {
     [SerializeField]
-    private List<Sprite> carSpriteList;
-    [SerializeField]
     private SpriteRenderer carSpriteRenderer;
+    private string animationConditionName = null;
 
     private void OnEnable()
     {
-        GhostCarSpawnerManager.OnghostSpawned += GetCarCurrentSprite;
+        GhostCarSpawnerManager.OnghostSpawned += GetCarCurrentAnimationConditionName;
+        GhostCarSpawnerManager.OnCarAnimationChange += ApplyAnimation;
     }
 
     private void OnDisable()
     {
-        GhostCarSpawnerManager.OnghostSpawned -= GetCarCurrentSprite;
+        GhostCarSpawnerManager.OnghostSpawned -= GetCarCurrentAnimationConditionName;
+        GhostCarSpawnerManager.OnCarAnimationChange -= ApplyAnimation;
     }
 
     public void UpdateCarRunningAnimation(BonusEnum currentCarBonus, Animator carAnimator)
@@ -44,11 +45,16 @@ public class CarSpriteManager : MonoBehaviour
                 break;
         }
 
+        this.animationConditionName = animationConditionName;
+        this.ApplyAnimation(carAnimator, animationConditionName);
+    }
+
+    public void ApplyAnimation(Animator carAnimator, string animationConditionName)
+    {
         carAnimator.SetBool(animationConditionName, true);
         carAnimator.SetBool("IsDefaultCar", false);
         this.DeactivateOtherBonusAnimations(animationConditionName, carAnimator);
     }
-
 
     private void DeactivateOtherBonusAnimations(string conditionNameToSkip, Animator carAnimator)
     {
@@ -69,8 +75,8 @@ public class CarSpriteManager : MonoBehaviour
 
     }
 
-    public Sprite GetCarCurrentSprite()
+    public string GetCarCurrentAnimationConditionName()
     {
-        return this.carSpriteRenderer.sprite;
+        return this.animationConditionName;
     }
 }

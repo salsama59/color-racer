@@ -12,7 +12,7 @@ public class CarMovementController : MonoBehaviour
     public static event Action<PointInTime> OnCarMovementInput;
     public static event Action<float> OnCarFuelBonusAttribution;
     public static event Action<float> OnCarDamageRepairBonusAttribution;
-    private CarSpriteManager carSpriteManager;
+    private CarAnimationManager carSpriteManager;
     [SerializeField]
     private Rigidbody2D carRigidBody2D;
     private float rotationAngle = 0f;
@@ -33,7 +33,7 @@ public class CarMovementController : MonoBehaviour
 
     private void Start()
     {
-        this.carSpriteManager = this.gameObject.GetComponent<CarSpriteManager>();
+        this.carSpriteManager = this.gameObject.GetComponent<CarAnimationManager>();
         this.carAnimator = this.gameObject.GetComponent<Animator>();
     }
 

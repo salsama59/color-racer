@@ -39,7 +39,7 @@ public class FuelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.isGameInPause)
+        if (!GameManager.isGameInPause && GameManager.isRacePreparationDone)
         {
 
             this.timeElapsed += Time.deltaTime;
