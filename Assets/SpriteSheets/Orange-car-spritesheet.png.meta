@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Orange-car-spritesheet_2: -4920450466749476439
+      Orange-car-spritesheet_5: 7080486213717286407
+      Orange-car-spritesheet_3: 900555380903721832
+      Orange-car-spritesheet_0: 7657941795763383342
+      Orange-car-spritesheet_4: -8044333510070150109
+      Orange-car-spritesheet_1: -6814058537341838446
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

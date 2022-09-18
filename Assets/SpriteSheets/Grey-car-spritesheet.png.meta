@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Grey-car-spritesheet_5: 2368820377418605587
+      Grey-car-spritesheet_2: -6296027933877784992
+      Grey-car-spritesheet_1: -3127696350739811485
+      Grey-car-spritesheet_4: 1859979174983180719
+      Grey-car-spritesheet_0: 4606042623791061116
+      Grey-car-spritesheet_3: -7712193147543380179
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
