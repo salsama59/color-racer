@@ -1,4 +1,4 @@
 public enum GameOverReasonEnum
 {
-    TIMER, FUEL, DAMAGE
+    TIMER, FUEL, DAMAGE, NEMESIS
 }

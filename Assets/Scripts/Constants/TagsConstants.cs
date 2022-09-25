@@ -8,4 +8,6 @@ public class TagsConstants
     public static string SLOWING_OBSTACLE_TAG = "SlowingObstacle";
     public static string CHECKPOINT_TAG = "Checkpoint";
     public static string GHOST_CAR_TAG = "GhostCar";
+    public static string PATH_FINDING_MANAGER_TAG = "PathFindingManager";
+    
 }

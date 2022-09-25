@@ -16,6 +16,8 @@ public class GhostCarSpawnerManager : MonoBehaviour
     private float timeElapsedForNemesisSpawn = 0f;
     private bool isNemesisGhostSpawned = false;
     private GameObject nemesisGhostGameObject;
+    [SerializeField]
+    private Transform nemesisDefaultSpawnPoint;
 
     private void OnEnable()
     {
@@ -55,6 +57,10 @@ public class GhostCarSpawnerManager : MonoBehaviour
                 {
                     spawnPosition = checkpointCollider.gameObject.transform.position;
                     spawnRotation = checkpointCollider.gameObject.transform.rotation;
+                } else
+                {
+                    spawnPosition = nemesisDefaultSpawnPoint.position;
+                    spawnRotation = nemesisDefaultSpawnPoint.rotation;
                 }
 
                 this.nemesisGhostGameObject = Instantiate(this.nemesisGhostModel, spawnPosition, spawnRotation);
