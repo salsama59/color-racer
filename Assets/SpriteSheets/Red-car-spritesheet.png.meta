@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Red-car-spritesheet_5: 3425832780363148839
+      Red-car-spritesheet_2: 8341030972132701200
+      Red-car-spritesheet_0: 3136717175132907511
+      Red-car-spritesheet_1: 515509107465066695
+      Red-car-spritesheet_3: -4578493997145775472
+      Red-car-spritesheet_4: 5998725390618336897
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

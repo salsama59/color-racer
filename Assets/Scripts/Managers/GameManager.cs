@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         LapCollider.OnGameOver += GameOver;
         FuelManager.OnFuelShortage += GameOver;
         DamageManager.OnDamageBeyondRepair += GameOver;
+        NemesisCollider.OnNemesisHit += GameOver;
         LapCollider.OnCarsMotionStop += StopCarsMotion;
         BonusManager.OnCarsMotionResume += ResumeCarsMotion;
     }
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         LapCollider.OnGameOver -= GameOver;
         FuelManager.OnFuelShortage -= GameOver;
         DamageManager.OnDamageBeyondRepair -= GameOver;
+        NemesisCollider.OnNemesisHit -= GameOver;
         LapCollider.OnCarsMotionStop -= StopCarsMotion;
         BonusManager.OnCarsMotionResume -= ResumeCarsMotion;
     }
@@ -72,15 +74,11 @@ public class GameManager : MonoBehaviour
         GameObject lapManagerGameObject = GameObject.FindGameObjectWithTag(TagsConstants.LAP_MANAGER_TAG);
         LapManager lapManagerScript = lapManagerGameObject.GetComponent<LapManager>();
 
-        //Because the game over is declared before the last lap count
-        lapManagerScript.LapCounter++;
-
-        this.lastLapNumberText.text = $"You did {lapManagerScript.LapCounter} laps!!!";
-        this.lastTimerText.text = $"Your time was {timerManagerScript.TimeElapsed} seconds";
-
         switch (gameOverReason)
         {
             case GameOverReasonEnum.TIMER:
+                //Because the game over is declared before the last lap count
+                lapManagerScript.LapCounter++;
                 this.gameOverReasonText.text = $"Your was'nt able to beat the following time : {timerManagerScript.LastTimeElapsed} seconds";
                 break;
             case GameOverReasonEnum.FUEL:
@@ -89,10 +87,16 @@ public class GameManager : MonoBehaviour
             case GameOverReasonEnum.DAMAGE:
                 this.gameOverReasonText.text = $"Unfortunatelly your car damage reached 100%";
                 break;
+            case GameOverReasonEnum.NEMESIS:
+                this.gameOverReasonText.text = $"Unfortunatelly your was crush by an unknow vehicule, next time try to be faster";
+                break;
             default:
                 break;
         }
-        
+
+        this.lastLapNumberText.text = $"You did {lapManagerScript.LapCounter} laps!!!";
+        this.lastTimerText.text = $"Your time was {timerManagerScript.TimeElapsed} seconds";
+
         this.gameOverPanel.SetActive(true);
         this.gameMainUiPanel.SetActive(false);
 

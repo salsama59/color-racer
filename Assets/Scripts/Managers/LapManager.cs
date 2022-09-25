@@ -39,23 +39,24 @@ public class LapManager : MonoBehaviour
         this.lapCounterText.text = $"Laps: {this.LapCounter}";
     }
 
-    public void ValidateCheckpoint(int checkpointIndexTovalidate)
+    public void ValidateCheckpoint(int checkpointIndexToValidate)
     {
-        if(this.currentCheckpointIndex == checkpointIndexTovalidate - 1)
+        if(this.CurrentCheckpointIndex == checkpointIndexToValidate - 1)
         {
-            this.currentCheckpointIndex = checkpointIndexTovalidate;
+            this.CurrentCheckpointIndex = checkpointIndexToValidate;
         }
     }
 
     public bool IsAllCheckpointsValidated()
     {
-        return currentCheckpointIndex == targetCheckpointsCount;
+        return CurrentCheckpointIndex == targetCheckpointsCount;
     }
 
     public void ResetCheckpointIndex()
     {
-        this.currentCheckpointIndex = 0;
+        this.CurrentCheckpointIndex = 0;
     }
 
     public int LapCounter { get => lapCounter; set => lapCounter = value; }
+    public int CurrentCheckpointIndex { get => currentCheckpointIndex; set => currentCheckpointIndex = value; }
 }

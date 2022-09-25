@@ -11,6 +11,8 @@ TagManager:
   - SlowingObstacle
   - Checkpoint
   - GhostCar
+  - PathFindingManager
+  - BaseTilemap
   layers:
   - Default
   - TransparentFX
