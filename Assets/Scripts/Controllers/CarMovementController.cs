@@ -6,19 +6,13 @@ using UnityEngine;
 public class CarMovementController : MonoBehaviour
 {
 
-    
-    private float carTranslationSpeed = 8f;
-    private float carRotationSpeed = 3f;
     public static event Action<PointInTime> OnCarMovementInput;
     public static event Action<float> OnCarFuelBonusAttribution;
     public static event Action<float> OnCarDamageRepairBonusAttribution;
-    private CarAnimationManager carSpriteManager;
+    private CarAnimationManager carAnimationManager;
     [SerializeField]
     private Rigidbody2D carRigidBody2D;
     private float rotationAngle = 0f;
-    private float driftFactor = 0.80f;
-    private float maxSpeed = 20f;
-
     [SerializeField]
     private CarInputHandler carInputHandler;
     private float velocityDotProduct;
@@ -28,13 +22,13 @@ public class CarMovementController : MonoBehaviour
     private float carDragSaved;
     private float carAngularDragSaved;
     private Animator carAnimator;
+    private CarStatisticsHandler carStatisticsHandler;
 
-
-
-    private void Start()
+    private void Awake()
     {
-        this.carSpriteManager = this.gameObject.GetComponent<CarAnimationManager>();
-        this.carAnimator = this.gameObject.GetComponent<Animator>();
+        this.carStatisticsHandler = GetComponent<CarStatisticsHandler>();
+        this.carAnimationManager = GetComponent<CarAnimationManager>();
+        this.carAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -90,25 +84,25 @@ public class CarMovementController : MonoBehaviour
 
         
         //Limit so we cannot go faster than the max speed in the "forward" direction
-        if (velocityDotProduct > maxSpeed && this.carInputHandler.AccelerationInput > 0)
+        if (velocityDotProduct > this.carStatisticsHandler.CarStatus.MaxSpeed && this.carInputHandler.AccelerationInput > 0)
         {
             return;
         }
         
         //Limit so we cannot go faster than the 50% of max speed in the "reverse" direction
-        if (velocityDotProduct < -maxSpeed * 0.5f && this.carInputHandler.AccelerationInput < 0)
+        if (velocityDotProduct < -this.carStatisticsHandler.CarStatus.MaxSpeed * 0.5f && this.carInputHandler.AccelerationInput < 0)
         {
             return;
         }
            
         //Limit so we cannot go faster in any direction while accelerating
-        if (this.carRigidBody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && this.carInputHandler.AccelerationInput > 0)
+        if (this.carRigidBody2D.velocity.sqrMagnitude > this.carStatisticsHandler.CarStatus.MaxSpeed * this.carStatisticsHandler.CarStatus.MaxSpeed && this.carInputHandler.AccelerationInput > 0)
         {
             return;
         }
 
         //Create a force for the engine
-        engineForceVector = transform.up * this.carInputHandler.AccelerationInput * this.carTranslationSpeed;
+        engineForceVector = transform.up * this.carInputHandler.AccelerationInput * this.carStatisticsHandler.CarStatus.CarTranslationSpeed;
 
         //Apply force and pushes the car forward
         this.carRigidBody2D.AddForce(engineForceVector, ForceMode2D.Force);
@@ -124,7 +118,7 @@ public class CarMovementController : MonoBehaviour
         minimumSpeedBeforeAllowRotation = Mathf.Clamp01(minimumSpeedBeforeAllowRotation);
 
         //Update the rotation angle based on input
-        rotationAngle -= this.carInputHandler.RotationInput * this.carRotationSpeed * minimumSpeedBeforeAllowRotation;
+        rotationAngle -= this.carInputHandler.RotationInput * this.carStatisticsHandler.CarStatus.CarRotationSpeed * minimumSpeedBeforeAllowRotation;
 
         //Apply steering by rotating the car object
         this.carRigidBody2D.MoveRotation(rotationAngle);
@@ -139,19 +133,19 @@ public class CarMovementController : MonoBehaviour
         Vector2 rightVelocity = transform.right * Vector2.Dot(this.carRigidBody2D.velocity, transform.right);
 
         //Kill the orthogonal velocity (side velocity) based on how much the car should drift. 
-        this.carRigidBody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
+        this.carRigidBody2D.velocity = forwardVelocity + rightVelocity * this.carStatisticsHandler.CarStatus.DriftFactor;
 
         pointInTime.VelocityVector = new Vector2(this.carRigidBody2D.velocity.x, this.carRigidBody2D.velocity.y);
     }
 
     public void AddSpeed(float amountToAddInPercentage)
     {
-        this.carTranslationSpeed += this.carTranslationSpeed * amountToAddInPercentage / 100f;
+        this.carStatisticsHandler.CarStatus.CarTranslationSpeed += this.carStatisticsHandler.CarStatus.CarTranslationSpeed * amountToAddInPercentage / 100f;
     }
 
     public void RemoveSpeed(float amountToRemoveInPercentage)
     {
-        this.carTranslationSpeed -= this.carTranslationSpeed * amountToRemoveInPercentage / 100f;
+        this.carStatisticsHandler.CarStatus.CarTranslationSpeed -= this.carStatisticsHandler.CarStatus.CarTranslationSpeed * amountToRemoveInPercentage / 100f;
     }
 
     public void AddBonusToCar(BonusEnum bonusType, float bonusAmountInPercentage)
@@ -168,7 +162,7 @@ public class CarMovementController : MonoBehaviour
                 }
                 break;
             case BonusEnum.MANIABILITY:
-                this.carRotationSpeed += this.carRotationSpeed * bonusAmountInPercentage / 100f;
+                this.carStatisticsHandler.CarStatus.CarRotationSpeed += this.carStatisticsHandler.CarStatus.CarRotationSpeed * bonusAmountInPercentage / 100f;
                 break;
             case BonusEnum.DAMAGE_REPAIR:
                 if (OnCarDamageRepairBonusAttribution != null)
@@ -179,7 +173,7 @@ public class CarMovementController : MonoBehaviour
             default:
                 break;
         }
-        this.carSpriteManager.UpdateCarRunningAnimation(bonusType, this.carAnimator);
+        this.carAnimationManager.UpdateCarRunningAnimation(bonusType, this.carAnimator);
     }
 
     public void StopCarMotion()

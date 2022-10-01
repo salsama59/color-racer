@@ -12,7 +12,7 @@ public class CarMovementRecordManager : MonoBehaviour
     private Quaternion playerCarReferenceRotation = Quaternion.identity;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         this.playerCarGameObject = GameObject.FindGameObjectWithTag(TagsConstants.PLAYER_TAG);
         this.PointsInTime = new List<PointInTime>();

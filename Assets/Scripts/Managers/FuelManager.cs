@@ -9,18 +9,19 @@ public class FuelManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI fuelText;
-    private float fuel = 100f;
-    private float maxFuel = 100f;
     private static float FUEL_CONSUMPTION_PERCENTAGE = 0.25f;
     private static float FUEL_UPDATE_RATE_IN_SECONDS = 1f;
-    public static bool isEngineOn = false; 
-
-    private bool isFuelRegenerationAllowed = false;
-    private float amountOfFuelRegenerated = 0f;
 
     private float timeElapsed = 0;
 
     public static event Action<GameOverReasonEnum> OnFuelShortage;
+    private CarStatus carStatus;
+
+    private void Start()
+    {
+        GameObject playerCarGameObject =  GameObject.FindGameObjectWithTag(TagsConstants.PLAYER_TAG);
+        this.carStatus = CarUtils.GetCarStatus(playerCarGameObject);
+    }
 
     private void OnEnable()
     {
@@ -46,18 +47,18 @@ public class FuelManager : MonoBehaviour
 
             if(this.timeElapsed >= FUEL_UPDATE_RATE_IN_SECONDS)
             {
-                if (!this.isFuelRegenerationAllowed && isEngineOn)
+                if (!this.carStatus.IsFuelRegenerationAllowed && this.carStatus.IsEngineOn)
                 {
                     this.SubstractFuel(FUEL_CONSUMPTION_PERCENTAGE);
                 }
-                else if(this.isFuelRegenerationAllowed)
+                else if(this.carStatus.IsFuelRegenerationAllowed)
                 {
-                    this.AddFuel(this.amountOfFuelRegenerated);
+                    this.AddFuel(this.carStatus.AmountOfFuelRegenerated);
                 }
 
                 this.timeElapsed = 0f;
 
-                if(this.fuel == 0f && OnFuelShortage != null)
+                if(this.carStatus.Fuel == 0f && OnFuelShortage != null)
                 {
                     OnFuelShortage.Invoke(GameOverReasonEnum.FUEL);
                 }
@@ -68,31 +69,31 @@ public class FuelManager : MonoBehaviour
 
     public void UpdateFuelDisplay()
     {
-        this.fuelText.text = $"Fuel : {this.fuel}%";
+        this.fuelText.text = $"Fuel : {this.carStatus.Fuel}%";
     }
 
     public void AddFuel(float amountInpercentage)
     {
-        this.fuel += amountInpercentage * this.maxFuel / 100;
-        this.fuel = Mathf.Clamp(this.fuel, 0f, this.maxFuel);
+        this.carStatus.Fuel += amountInpercentage * this.carStatus.MaxFuel / 100;
+        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.carStatus.MaxFuel);
         this.UpdateFuelDisplay();
     }
 
     public void SubstractFuel(float amountInpercentage)
     {
-        this.fuel -= amountInpercentage * this.maxFuel / 100;
-        this.fuel = Mathf.Clamp(this.fuel, 0f, this.maxFuel);
+        this.carStatus.Fuel -= amountInpercentage * this.carStatus.MaxFuel / 100;
+        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.carStatus.MaxFuel);
         this.UpdateFuelDisplay();
     }
 
     public void AllowsFuelRegeneration(float amountOfFuelRegenerated)
     {
-        this.amountOfFuelRegenerated = amountOfFuelRegenerated;
+        this.carStatus.AmountOfFuelRegenerated = amountOfFuelRegenerated;
         this.ModifyFuelRegenerationRequirement(true);
     }
 
     public void ModifyFuelRegenerationRequirement(bool isRegenerationAllowed)
     {
-        this.isFuelRegenerationAllowed = isRegenerationAllowed;
+        this.carStatus.IsFuelRegenerationAllowed = isRegenerationAllowed;
     }
 }
