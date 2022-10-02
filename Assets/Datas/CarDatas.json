@@ -1,0 +1,15 @@
+{
+  "carTranslationSpeed": 0,
+  "carRotationSpeed": 3,
+  "driftFactor": 0.80,
+  "maxSpeed": 20,
+  "fuel": 100,
+  "maxFuel": 100,
+  "amountOfFuelRegenerated": 0,
+  "damage": 0,
+  "maxDamage": 100,
+  "amountOfDamageRepaired": 0,
+  "isEngineOn": false,
+  "isDamageRepairActive": false,
+  "isFuelRegenerationAllowed":  false
+}

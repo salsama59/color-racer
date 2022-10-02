@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
             case GameOverReasonEnum.TIMER:
                 //Because the game over is declared before the last lap count
                 lapManagerScript.LapCounter++;
-                this.gameOverReasonText.text = $"Your was'nt able to beat the following time : {timerManagerScript.LastTimeElapsed} seconds";
+                this.gameOverReasonText.text = $"You was'nt able to beat the following time : {timerManagerScript.LastTimeElapsed} seconds";
                 break;
             case GameOverReasonEnum.FUEL:
                 this.gameOverReasonText.text = $"Unfortunatelly your fuel level reached zero";
