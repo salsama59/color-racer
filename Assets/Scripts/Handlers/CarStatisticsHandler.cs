@@ -10,8 +10,10 @@ public class CarStatisticsHandler : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        this.CarStatus = new CarStatus();
-        this.DriverStatus = new DriverStatus();
+        string carDataJsonString = JsonUtils.LoadJsonFile(FileConstants.CAR_STATUS_JSON_FILE_PATH);
+        this.CarStatus = JsonUtils.FromJsonToObject<CarStatus>(carDataJsonString);
+        string driverDataJsonString = JsonUtils.LoadJsonFile(FileConstants.DRIVER_STATUS_JSON_FILE_PATH);
+        this.DriverStatus = JsonUtils.FromJsonToObject<DriverStatus>(driverDataJsonString);
     }
 
     public CarStatus CarStatus { get => carStatus; set => carStatus = value; }
