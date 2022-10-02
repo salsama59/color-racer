@@ -8,4 +8,9 @@ public class CarUtils
     {
         return carGameObject.GetComponent<CarStatisticsHandler>().CarStatus;
     }
+
+    public static DriverStatus GetDriverStatus(GameObject carGameObject)
+    {
+        return carGameObject.GetComponent<CarStatisticsHandler>().DriverStatus;
+    }
 }
