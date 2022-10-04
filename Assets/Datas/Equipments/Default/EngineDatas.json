@@ -1,0 +1,7 @@
+{
+  "name": "Regular car engine",
+  "price": 200,
+  "description": "It is just a plain old car engine",
+  "speedBonus": 0,
+  "fuelConsumptionBonnus": 0
+}

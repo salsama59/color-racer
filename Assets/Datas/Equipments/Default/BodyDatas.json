@@ -1,0 +1,8 @@
+{
+  "name": "Regular car body",
+  "price": 50,
+  "description": "It is just a plain old car body",
+  "damageResistanceBonus": 0,
+  "maxDamageBonus": 0,
+  "maxSpeedBonus": 0
+}

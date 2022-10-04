@@ -1,0 +1,8 @@
+{
+  "name": "Regular car wheels",
+  "price": 100,
+  "description": "It is just a plain old car wheels",
+  "speedBonus": 0,
+  "driftFactorBonus": 0,
+  "manoeuvrabilityBonus": 0
+}

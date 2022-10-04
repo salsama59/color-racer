@@ -13,4 +13,9 @@ public class CarUtils
     {
         return carGameObject.GetComponent<CarStatisticsHandler>().DriverStatus;
     }
+
+    public static CarEquipments GetCarEquipments(GameObject carGameObject)
+    {
+        return carGameObject.GetComponent<CarStatisticsHandler>().CarEquipments;
+    }
 }
