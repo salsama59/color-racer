@@ -39,7 +39,7 @@ public class CarAnimationManager : MonoBehaviour
                 //Red
                 animationConditionName = "HasRedBonus";
                 break;
-            case BonusEnum.MANIABILITY:
+            case BonusEnum.MANOEUVRABILITY:
                 //Green
                 animationConditionName = "HasGreenBonus";
                 break;

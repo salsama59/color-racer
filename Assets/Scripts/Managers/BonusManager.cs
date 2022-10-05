@@ -32,7 +32,7 @@ public class BonusManager : MonoBehaviour
 
     public void AddManiabilityBonus()
     {
-        this.AddBonus(BonusEnum.MANIABILITY, BonusConstants.MANIABILITY_BONUS_AMOUNT);
+        this.AddBonus(BonusEnum.MANOEUVRABILITY, BonusConstants.MANOEUVRABILITY_BONUS_AMOUNT);
     }
 
     public void AddDamageRepairBonus()

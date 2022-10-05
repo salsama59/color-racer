@@ -16,11 +16,13 @@ public class FuelManager : MonoBehaviour
 
     public static event Action<GameOverReasonEnum> OnFuelShortage;
     private CarStatus carStatus;
+    private CarEquipments carEquipments;
 
     private void Start()
     {
         GameObject playerCarGameObject =  GameObject.FindGameObjectWithTag(TagsConstants.PLAYER_TAG);
         this.carStatus = CarUtils.GetCarStatus(playerCarGameObject);
+        this.carEquipments = CarUtils.GetCarEquipments(playerCarGameObject);
     }
 
     private void OnEnable()
@@ -74,15 +76,15 @@ public class FuelManager : MonoBehaviour
 
     public void AddFuel(float amountInpercentage)
     {
-        this.carStatus.Fuel += amountInpercentage * this.carStatus.MaxFuel / 100;
-        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.carStatus.MaxFuel);
+        this.carStatus.Fuel += amountInpercentage * this.CalculateEnhancedMaxFuelOfCar() / 100;
+        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.CalculateEnhancedMaxFuelOfCar());
         this.UpdateFuelDisplay();
     }
 
     public void SubstractFuel(float amountInpercentage)
     {
-        this.carStatus.Fuel -= amountInpercentage * this.carStatus.MaxFuel / 100;
-        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.carStatus.MaxFuel);
+        this.carStatus.Fuel -= amountInpercentage * this.CalculateEnhancedMaxFuelOfCar() / 100;
+        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.CalculateEnhancedMaxFuelOfCar());
         this.UpdateFuelDisplay();
     }
 
@@ -95,5 +97,10 @@ public class FuelManager : MonoBehaviour
     public void ModifyFuelRegenerationRequirement(bool isRegenerationAllowed)
     {
         this.carStatus.IsFuelRegenerationAllowed = isRegenerationAllowed;
+    }
+
+    private float CalculateEnhancedMaxFuelOfCar()
+    {
+        return this.carStatus.MaxFuel + this.carEquipments.FuelTankEquipment.MaxFuelBonus;
     }
 }
