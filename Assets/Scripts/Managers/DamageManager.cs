@@ -47,7 +47,7 @@ public class DamageManager : MonoBehaviour
                 this.timeElapsed += Time.deltaTime;
                 if (this.timeElapsed >= DAMAGE_UPDATE_RATE_IN_SECONDS)
                 {
-                    this.RepairDamage(this.carStatus.AmountOfDamageRepaired);
+                    this.RepairDamage(this.carStatus.AmountOfDamageRepaired.GetEnhancedValue());
                     this.timeElapsed = 0f;
                 }
 
@@ -56,7 +56,7 @@ public class DamageManager : MonoBehaviour
                 this.timeElapsed = 0f;
             }
 
-            if (this.carStatus.Damage == this.CalculateEnhancedMaxDamageOfCar() && OnDamageBeyondRepair != null)
+            if (this.carStatus.Damage.BaseValue == this.CalculateEnhancedMaxDamageOfCar() && OnDamageBeyondRepair != null)
             {
                 OnDamageBeyondRepair.Invoke(GameOverReasonEnum.DAMAGE);
             }
@@ -72,26 +72,26 @@ public class DamageManager : MonoBehaviour
             damageReduced = 0;
         }
 
-        this.carStatus.Damage += this.CalculateEnhancedMaxDamageOfCar() * damageReduced / 100f;
-        this.carStatus.Damage = Mathf.Clamp(this.carStatus.Damage, 0f, this.CalculateEnhancedMaxDamageOfCar());
+        this.carStatus.Damage.BaseValue += this.CalculateEnhancedMaxDamageOfCar() * damageReduced / 100f;
+        this.carStatus.Damage.BaseValue = Mathf.Clamp(this.carStatus.Damage.BaseValue, 0f, this.CalculateEnhancedMaxDamageOfCar());
         this.UpdateDamageDisplay();
     }
 
     public void RepairDamage(float damageAmountInPercentageToRemove)
     {
-        this.carStatus.Damage -= this.CalculateEnhancedMaxDamageOfCar() * damageAmountInPercentageToRemove / 100f;
-        this.carStatus.Damage = Mathf.Clamp(this.carStatus.Damage, 0f, this.CalculateEnhancedMaxDamageOfCar());
+        this.carStatus.Damage.BaseValue -= this.CalculateEnhancedMaxDamageOfCar() * damageAmountInPercentageToRemove / 100f;
+        this.carStatus.Damage.BaseValue = Mathf.Clamp(this.carStatus.Damage.BaseValue, 0f, this.CalculateEnhancedMaxDamageOfCar());
         this.UpdateDamageDisplay();
     }
 
     public void UpdateDamageDisplay()
     {
-        this.damageText.text = $"Damages : {this.carStatus.Damage}/{this.CalculateEnhancedMaxDamageOfCar()}";
+        this.damageText.text = $"Damages : {this.carStatus.Damage.BaseValue}/{this.CalculateEnhancedMaxDamageOfCar()}";
     }
 
     public void AllowsDamageRepair(float amountOfDamageRepaired)
     {
-        this.carStatus.AmountOfDamageRepaired = amountOfDamageRepaired;
+        this.carStatus.AmountOfDamageRepaired.BaseValue = amountOfDamageRepaired;
         this.ModifyDamageRepairRequirement(true);
     }
 
@@ -102,6 +102,6 @@ public class DamageManager : MonoBehaviour
 
     private float CalculateEnhancedMaxDamageOfCar()
     {
-        return this.carStatus.MaxDamage + this.carEquipments.BodyEquipment.MaxDamageBonus;
+        return this.carStatus.MaxDamage.GetEnhancedValue()/*+ this.carEquipments.BodyEquipment.MaxDamageBonus*/;
     }
 }

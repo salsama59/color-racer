@@ -1,14 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class DriverStatus
 {
+    [SerializeField]
     private string driverName;
+    [SerializeField]
     private int currentExperience;
+    [SerializeField]
     private int experienceToReachNextLevel;
+    [SerializeField]
     private int skillPoints;
+    [SerializeField]
     private int driverMana;
+    [SerializeField]
     private int luck;
 
     public string DriverName { get => driverName; set => driverName = value; }
