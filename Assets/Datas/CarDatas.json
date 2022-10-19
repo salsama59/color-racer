@@ -1,15 +1,45 @@
 {
-  "carTranslationSpeed": 0,
-  "carRotationSpeed": 3,
-  "driftFactor": 0.80,
-  "maxSpeed": 20,
-  "fuel": 100,
-  "maxFuel": 100,
-  "amountOfFuelRegenerated": 0,
-  "damage": 0,
-  "maxDamage": 100,
-  "amountOfDamageRepaired": 0,
+  "carTranslationSpeed": {
+    "baseValue": 8,
+    "modifiers": []
+  },
+  "carRotationSpeed": {
+    "baseValue": 3,
+    "modifiers": []
+  },
+  "driftFactor": {
+    "baseValue": 0.80,
+    "modifiers": []
+  },
+  "maxSpeed": {
+    "baseValue": 20,
+    "modifiers": []
+  },
+  "fuel": {
+    "baseValue": 100,
+    "modifiers": []
+  },
+  "maxFuel": {
+    "baseValue": 100,
+    "modifiers": []
+  },
+  "amountOfFuelRegenerated": {
+    "baseValue": 0,
+    "modifiers": []
+  },
+  "damage": {
+    "baseValue": 0,
+    "modifiers": []
+  },
+  "maxDamage": {
+    "baseValue": 100,
+    "modifiers": []
+  },
+  "amountOfDamageRepaired": {
+    "baseValue": 0,
+    "modifiers": []
+  },
   "isEngineOn": false,
   "isDamageRepairActive": false,
-  "isFuelRegenerationAllowed":  false
+  "isFuelRegenerationAllowed": false
 }

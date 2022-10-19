@@ -2,5 +2,6 @@
   "name": "Regular car brakes",
   "price": 25,
   "description": "It is just a plain old car brakes",
-  "speedBonus": 0
+  "speedBonus": 0,
+  "equipmentType": 2
 }

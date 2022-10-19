@@ -3,5 +3,6 @@
   "price": 200,
   "description": "It is just a plain old car engine",
   "speedBonus": 0,
-  "fuelConsumptionBonnus": 0
+  "fuelConsumptionBonnus": 0,
+  "equipmentType": 1
 }

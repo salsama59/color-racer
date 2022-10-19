@@ -67,8 +67,8 @@ public class CarMovementController : MonoBehaviour
     {
         pointInTime.IsForceApplied = false;
         Vector2 engineForceVector;
-        float enHancedMaximumSpeed = this.CalculateEnhancedMaxSpeedOfCar();
-        float enHancedSpeed = this.CalculateEnhancedSpeedOfCar();
+        float enhancedMaximumSpeed = this.carStatisticsHandler.CarStatus.MaxSpeed.GetEnhancedValue();
+        float enhancedSpeed = this.CalculateEnhancedSpeedOfCar();
 
         //Apply drag if there is no accelerationInput so the car stops when the player lets go of the accelerator
         if (this.carInputHandler.AccelerationInput == 0)
@@ -87,25 +87,25 @@ public class CarMovementController : MonoBehaviour
 
 
         //Limit so we cannot go faster than the max speed in the "forward" direction
-        if (velocityDotProduct > enHancedMaximumSpeed && this.carInputHandler.AccelerationInput > 0)
+        if (velocityDotProduct > enhancedMaximumSpeed && this.carInputHandler.AccelerationInput > 0)
         {
             return;
         }
 
         //Limit so we cannot go faster than the 50% of max speed in the "reverse" direction
-        if (velocityDotProduct < -enHancedMaximumSpeed * 0.5f && this.carInputHandler.AccelerationInput < 0)
+        if (velocityDotProduct < -enhancedMaximumSpeed * 0.5f && this.carInputHandler.AccelerationInput < 0)
         {
             return;
         }
 
         //Limit so we cannot go faster in any direction while accelerating
-        if (this.carRigidBody2D.velocity.sqrMagnitude > enHancedMaximumSpeed * enHancedMaximumSpeed && this.carInputHandler.AccelerationInput > 0)
+        if (this.carRigidBody2D.velocity.sqrMagnitude > enhancedMaximumSpeed * enhancedMaximumSpeed && this.carInputHandler.AccelerationInput > 0)
         {
             return;
         }
 
         //Create a force for the engine
-        engineForceVector = transform.up * this.carInputHandler.AccelerationInput * enHancedSpeed;
+        engineForceVector = transform.up * this.carInputHandler.AccelerationInput * enhancedSpeed;
 
         //Apply force and pushes the car forward
         this.carRigidBody2D.AddForce(engineForceVector, ForceMode2D.Force);
@@ -114,17 +114,17 @@ public class CarMovementController : MonoBehaviour
         pointInTime.ForceVector = new Vector2(engineForceVector.x, engineForceVector.y);
     }
 
-    private float CalculateEnhancedMaxSpeedOfCar()
+    /*private float CalculateEnhancedMaxSpeedOfCar()
     {
        return this.carStatisticsHandler.CarStatus.MaxSpeed 
             + this.carStatisticsHandler.CarEquipments.BodyEquipment.MaxSpeedBonus;
-    }
+    }*/
 
     private float CalculateEnhancedSpeedOfCar()
     {
-        return this.carStatisticsHandler.CarStatus.CarTranslationSpeed
-             + this.carStatisticsHandler.CarEquipments.EngineEquipment.SpeedBonus
-             + this.carStatisticsHandler.CarEquipments.WheelEquipment.SpeedBonus;
+        return this.carStatisticsHandler.CarStatus.CarTranslationSpeed.GetEnhancedValue();
+             //+ this.carStatisticsHandler.CarEquipments.EngineEquipment.SpeedBonus
+             //+ this.carStatisticsHandler.CarEquipments.WheelEquipment.SpeedBonus;
     }
 
     private void RotateCar(PointInTime pointInTime)
@@ -145,14 +145,14 @@ public class CarMovementController : MonoBehaviour
 
     private float CalculateEnhancedRotationSpeedOfCar()
     {
-        return this.carStatisticsHandler.CarStatus.CarRotationSpeed
-             + this.carStatisticsHandler.CarEquipments.WheelEquipment.ManoeuvrabilityBonus
-             + this.carStatisticsHandler.CarEquipments.SteeringEquipment.ManoeuvrabilityBonus;
+        return this.carStatisticsHandler.CarStatus.CarRotationSpeed.GetEnhancedValue();
+             //+ this.carStatisticsHandler.CarEquipments.WheelEquipment.ManoeuvrabilityBonus
+             //+ this.carStatisticsHandler.CarEquipments.SteeringEquipment.ManoeuvrabilityBonus;
     }
 
     void RemoveOrthogonalVelocity(PointInTime pointInTime)
     {
-        float enhancedDriftFactor = this.CalculateEnhancedDriftFactorOfCar();
+        float enhancedDriftFactor = this.carStatisticsHandler.CarStatus.DriftFactor.GetEnhancedValue();
         //Get forward and right velocity of the car
         Vector2 forwardVelocity = transform.up * Vector2.Dot(this.carRigidBody2D.velocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(this.carRigidBody2D.velocity, transform.right);
@@ -163,20 +163,20 @@ public class CarMovementController : MonoBehaviour
         pointInTime.VelocityVector = new Vector2(this.carRigidBody2D.velocity.x, this.carRigidBody2D.velocity.y);
     }
 
-    private float CalculateEnhancedDriftFactorOfCar()
+    /*private float CalculateEnhancedDriftFactorOfCar()
     {
         return this.carStatisticsHandler.CarStatus.DriftFactor
              + this.carStatisticsHandler.CarEquipments.WheelEquipment.DriftFactorBonus;
-    }
+    }*/
 
     public void AddSpeed(float amountToAddInPercentage)
     {
-        this.carStatisticsHandler.CarStatus.CarTranslationSpeed += this.CalculateEnhancedSpeedOfCar() * amountToAddInPercentage / 100f;
+        this.carStatisticsHandler.CarStatus.CarTranslationSpeed.BaseValue += this.CalculateEnhancedSpeedOfCar() * amountToAddInPercentage / 100f;
     }
 
     public void RemoveSpeed(float amountToRemoveInPercentage)
     {
-        this.carStatisticsHandler.CarStatus.CarTranslationSpeed -= this.CalculateEnhancedSpeedOfCar() * amountToRemoveInPercentage / 100f;
+        this.carStatisticsHandler.CarStatus.CarTranslationSpeed.BaseValue -= this.CalculateEnhancedSpeedOfCar() * amountToRemoveInPercentage / 100f;
     }
 
     public void AddBonusToCar(BonusEnum bonusType, float bonusAmountInPercentage)
@@ -193,7 +193,7 @@ public class CarMovementController : MonoBehaviour
                 }
                 break;
             case BonusEnum.MANOEUVRABILITY:
-                this.carStatisticsHandler.CarStatus.CarRotationSpeed += this.CalculateEnhancedRotationSpeedOfCar() * bonusAmountInPercentage / 100f;
+                this.carStatisticsHandler.CarStatus.CarRotationSpeed.Modifiers.Add(this.CalculateEnhancedRotationSpeedOfCar() * bonusAmountInPercentage / 100f);
                 break;
             case BonusEnum.DAMAGE_REPAIR:
                 if (OnCarDamageRepairBonusAttribution != null)

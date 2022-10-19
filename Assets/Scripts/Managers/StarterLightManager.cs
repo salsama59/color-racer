@@ -24,7 +24,7 @@ public class StarterLightManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!this.isStartPhaseFinished)
+        if (!this.isStartPhaseFinished && !GameManager.isGameInPause)
         {
             this.elapsedTime += Time.fixedDeltaTime;
 

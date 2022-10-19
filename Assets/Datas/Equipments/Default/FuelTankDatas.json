@@ -2,5 +2,6 @@
   "name": "Regular car fuel tank",
   "price": 50,
   "description": "It is just a plain old car fuel tank",
-  "maxFuelBonus": 0
+  "maxFuelBonus": 0,
+  "equipmentType": 4
 }

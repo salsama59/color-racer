@@ -55,12 +55,12 @@ public class FuelManager : MonoBehaviour
                 }
                 else if(this.carStatus.IsFuelRegenerationAllowed)
                 {
-                    this.AddFuel(this.carStatus.AmountOfFuelRegenerated);
+                    this.AddFuel(this.carStatus.AmountOfFuelRegenerated.GetEnhancedValue());
                 }
 
                 this.timeElapsed = 0f;
 
-                if(this.carStatus.Fuel == 0f && OnFuelShortage != null)
+                if(this.carStatus.Fuel.BaseValue == 0f && OnFuelShortage != null)
                 {
                     OnFuelShortage.Invoke(GameOverReasonEnum.FUEL);
                 }
@@ -71,26 +71,26 @@ public class FuelManager : MonoBehaviour
 
     public void UpdateFuelDisplay()
     {
-        this.fuelText.text = $"Fuel : {this.carStatus.Fuel}%";
+        this.fuelText.text = $"Fuel : {this.carStatus.Fuel.BaseValue}%";
     }
 
     public void AddFuel(float amountInpercentage)
     {
-        this.carStatus.Fuel += amountInpercentage * this.CalculateEnhancedMaxFuelOfCar() / 100;
-        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.CalculateEnhancedMaxFuelOfCar());
+        this.carStatus.Fuel.BaseValue += amountInpercentage * this.CalculateEnhancedMaxFuelOfCar() / 100;
+        this.carStatus.Fuel.BaseValue = Mathf.Clamp(this.carStatus.Fuel.BaseValue, 0f, this.CalculateEnhancedMaxFuelOfCar());
         this.UpdateFuelDisplay();
     }
 
     public void SubstractFuel(float amountInpercentage)
     {
-        this.carStatus.Fuel -= amountInpercentage * this.CalculateEnhancedMaxFuelOfCar() / 100;
-        this.carStatus.Fuel = Mathf.Clamp(this.carStatus.Fuel, 0f, this.CalculateEnhancedMaxFuelOfCar());
+        this.carStatus.Fuel.BaseValue -= amountInpercentage * this.CalculateEnhancedMaxFuelOfCar() / 100;
+        this.carStatus.Fuel.BaseValue = Mathf.Clamp(this.carStatus.Fuel.BaseValue, 0f, this.CalculateEnhancedMaxFuelOfCar());
         this.UpdateFuelDisplay();
     }
 
     public void AllowsFuelRegeneration(float amountOfFuelRegenerated)
     {
-        this.carStatus.AmountOfFuelRegenerated = amountOfFuelRegenerated;
+        this.carStatus.AmountOfFuelRegenerated.BaseValue = amountOfFuelRegenerated;
         this.ModifyFuelRegenerationRequirement(true);
     }
 
@@ -101,6 +101,6 @@ public class FuelManager : MonoBehaviour
 
     private float CalculateEnhancedMaxFuelOfCar()
     {
-        return this.carStatus.MaxFuel + this.carEquipments.FuelTankEquipment.MaxFuelBonus;
+        return this.carStatus.MaxFuel.GetEnhancedValue()/* + this.carEquipments.FuelTankEquipment.MaxFuelBonus*/;
     }
 }
