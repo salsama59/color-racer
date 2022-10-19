@@ -17,6 +17,8 @@ public class DriverStatus
     [SerializeField]
     private int driverMana;
     [SerializeField]
+    private int driverMaximumMana;
+    [SerializeField]
     private int luck;
 
     public string DriverName { get => driverName; set => driverName = value; }
@@ -24,5 +26,6 @@ public class DriverStatus
     public int ExperienceToReachNextLevel { get => experienceToReachNextLevel; set => experienceToReachNextLevel = value; }
     public int SkillPoints { get => skillPoints; set => skillPoints = value; }
     public int DriverMana { get => driverMana; set => driverMana = value; }
+    public int DriverMaximumMana { get => driverMaximumMana; set => driverMaximumMana = value; }
     public int Luck { get => luck; set => luck = value; }
 }

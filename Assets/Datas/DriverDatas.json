@@ -4,5 +4,6 @@
   "experienceToReachNextLevel": 100,
   "skillPoints": 0,
   "driverMana": 10,
+  "driverMaximumMana": 10,
   "luck": 5
 }

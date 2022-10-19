@@ -156,4 +156,9 @@ public class GameManager : MonoBehaviour
         isRacePreparationDone = false;
     }
 
+    public void UnPauseGame()
+    {
+        GameManager.isGameInPause = false;
+    }
+
 }
