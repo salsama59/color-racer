@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public static event Action OnGameReset;
     public static event Action OnMainMenuReturn;
 
-    public static bool isRacePreparationDone = false;
+    public static bool isRacePreparationDone = true;
 
     private void OnEnable()
     {

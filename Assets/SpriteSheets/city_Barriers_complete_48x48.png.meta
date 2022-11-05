@@ -1,0 +1,2556 @@
+fileFormatVersion: 2
+guid: 4ac3252bc7c8c4040ab7910726025736
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf71898915163145b000fdedd4a29c2
+      internalID: 58717567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8d53b95c455d24ab2de0a643dad261
+      internalID: -1732067143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8703aac0b5d8b44c9e98360dc8c6962
+      internalID: -490738093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03fff1c8a5b1ae44aa4e879d5a70e37
+      internalID: 1031816285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2ef00e744a8ee448d13bbe6b117715
+      internalID: 1195343377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74a25acf5378074387bc94948e741f3
+      internalID: -701878909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ad0c8a37bb42244bb2b2ee404c55e6
+      internalID: -1724324398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf6a00aa585dff44898c870e10bcf78
+      internalID: 2112741446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d242bd0f0e7e9a4ebb112dc420c3fa8
+      internalID: -780573035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a14877ed76e5874ab11c7b1e21b6d13
+      internalID: -373834547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_10
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d211c6709c3d85a428f42070be283ba1
+      internalID: 2057245041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_11
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c86ad3ff6ed97242a4d1ed62e92c204
+      internalID: 425106069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ece0679bbcf614488f369a954338b2c
+      internalID: -120694461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_13
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd29146b50f68394b85829397c090d99
+      internalID: 354979094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_14
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 646
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8359a647a1102041bdfb8d44bf3bf70
+      internalID: 839007688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b143a46a9f988b149b39bcb9871a31b8
+      internalID: 1242349203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_16
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a690f3cfb48b5c04d9215ab1803e7407
+      internalID: 1104843104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dc75b2949938b49bda285b5f698315
+      internalID: 1669764762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9fe555fcee1cd488d0ccf7cc161d35
+      internalID: -1380667423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8435689f6963400458f2df4cc02c73a9
+      internalID: 1316343243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_20
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f027319d7d9d14dae31eb260496c67
+      internalID: -1410457483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_21
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 598
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f143aa6a611c9ea4dac4f95e5ffa524a
+      internalID: 1594672265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8fe340b082f3b439be3143ba4c37bb
+      internalID: 386820809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da242b07f520d8942ac8b18fd8fe6927
+      internalID: -1678018047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded6b211f537c2f44ab46e0320804dc7
+      internalID: -1738010064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2239162ccd1878541a70bee5f3c3a46d
+      internalID: 1021166844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_26
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b262a341e63cec44bc20cce7fa1f1e1
+      internalID: -1047845271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_27
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970a5f6e31935f947a285f0ac1871d9c
+      internalID: 513307481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_28
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 550
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9633c1ad6f1407a41b13b3e4080fd6db
+      internalID: -1759706882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ab9703962ac1d429b411765ef73eef
+      internalID: 93880478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab359b41c22e8de4bb2dfbccced55f4d
+      internalID: -1581134795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b8bbc0b4604f84b8e4ca42e44328b3
+      internalID: -187150944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_32
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fe9545a0dbb1d4ab1a35ebb0541e8d
+      internalID: -578710857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_33
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffdc3be854c07840ad083a1ec4bbb2d
+      internalID: -740610770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_34
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239fa7500e8752a429cb066d5be08eda
+      internalID: -613332859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_35
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 502
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ef13ed99b016d40995fb9e26481d41
+      internalID: 735605140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c458b06d24519948bbafd96a9b2949d
+      internalID: -806349465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_37
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6582bf853e281684ea63d63e6c0a9311
+      internalID: 232669453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec419f9f851cc9f46b00466e36611234
+      internalID: -157196797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e1e00a583897147a8f3dddc999cabb
+      internalID: 1804782132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_40
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e84526c119ef7241a2e1c022ec3f82c
+      internalID: -352358989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_41
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71da714552a99634abd65ec04d73d01f
+      internalID: -1769073720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_42
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4893d64314a044eb1acb86b7ff93cb
+      internalID: 1554187526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_43
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2349ad7d1261340837c5f60636c612
+      internalID: 1446979928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_44
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d07d373756663fb4faf5edcaa4882b0a
+      internalID: 1951128349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_45
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aaec2a0ffa649141b737c6a05d6a550
+      internalID: 1000959062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_46
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb89d3d676c6b842b55fd5da667a462
+      internalID: -278743752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_47
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4198c0c35fe60c34697a073402bc9e94
+      internalID: 678300047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_48
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0a1705af2a8cc49b4aa445928667a0
+      internalID: 1941459950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_49
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810622bd99d799443b0ea62ce41dcc9b
+      internalID: -109036856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_50
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 454
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86625e2009eae9441bd2af5d2d656bd2
+      internalID: -1201694233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33360fdb11dafb843a939c7dfa66b140
+      internalID: 1576225318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_52
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20abaa4e1730c8408d63ffe23970abc
+      internalID: -1407596693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019cb9d64857f7446b8bf7a3663d15aa
+      internalID: -1668046292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_54
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973b9a9732ff1184cabbbf635c03bad3
+      internalID: -1030066625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_55
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5a70f11b6c6ad4bbb9f50dc26fb3a7
+      internalID: -418048818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_56
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb4fcfe408ac7440a76488fb7c90710
+      internalID: -781166470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_57
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b340a9fb7d5cb9c41ab688a6f18a4134
+      internalID: 1721901194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_58
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaa717b8fdb7ff4599276d6304ca26d
+      internalID: -1325942031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_59
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1eed53400d16bb45a046800c9512c57
+      internalID: -1032338916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_60
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4240455c9709994b904e26e9647d078
+      internalID: 1711227984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_61
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec32ec8ab8a0a2843888dd1a6bbea6b9
+      internalID: -1754831452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_62
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abbf052990559a4ca6b1ccf5ff95def
+      internalID: -909949708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_63
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074680c5e40229e419d50014460521bd
+      internalID: -858769425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_64
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5d7aeb038f46349b75aeb06fa42025
+      internalID: -307447825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_65
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 406
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2228d3a032c2499439af2367af426adc
+      internalID: -298721244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6a5fbcdcd0cda4cb0b0856bec8551c
+      internalID: 442555087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_67
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d376cbbe4537b3f48b4b41c5d20c28f9
+      internalID: -1707742032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_68
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e780091a0ea7ac543a03a643fc41c697
+      internalID: 614089158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_69
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78a6a1e3fc16f94a8fe605290909004
+      internalID: 1094599767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_70
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6392f61d2383e694db8dbfe680e90901
+      internalID: -2122848091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_71
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8d9e9a35d6d4344a63e3cad27faf56
+      internalID: 2093711807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_72
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1fe88ce0b24684688b4b50125cba6b
+      internalID: -972643143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_73
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475fee4cf25458e498f7b07efb621277
+      internalID: 847495729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_74
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f13203ce93a68e4cb13194244bb27b0
+      internalID: 1640243213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_75
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 358
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad05b45ac7bc664cb0f1cfff41f03b1
+      internalID: -184422384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350e8783e5602ee4393eb65df1b744fd
+      internalID: -355996655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_77
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 310
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73d2c1a0db23024bade8de26811bd11
+      internalID: 464122990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_78
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 310
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cdd1d38a4a2f844adcbcec7cb47696
+      internalID: 848939394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_79
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 310
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5a6205029509a4fbf6a20b17e7ceef
+      internalID: 472232753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 310
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41dd4c72f277889409852ba844020a9c
+      internalID: 1258789623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0cdb03fa6efd942ae3ff5bd8793693
+      internalID: -898508458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_82
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 262
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58bc34157ccda9b41ab1c80ccbea3c8f
+      internalID: 571255199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_83
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 262
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3ba3afcb733bf4b9149795f223df34
+      internalID: 110041171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_84
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 262
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4babec39912dc4997077ac730b95df
+      internalID: 62511862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_85
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 262
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc6c753f42d39d74bbdb5a597a298d36
+      internalID: 1823324775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aaaad85409f8a3459da7e6ef900d10d
+      internalID: 1804393298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_87
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19c76e8ef593e947bc456bbc17d4508
+      internalID: -1238322226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_88
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d7ded1d546c2140abeed48c6c66db1
+      internalID: 1340959992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_89
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1377f8774c3354b871748554a2e72c
+      internalID: 758663022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_90
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ed46a3f9c8a624196e678c1e9504ac
+      internalID: -347806784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_91
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b93861659278ac49b759dabcf82164e
+      internalID: 490151995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_92
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 214
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a96a9bcf71ce9478bab0d4b56ebcc4
+      internalID: 650424173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_93
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c0893bdc0dce94cad8f7e6419ecc21
+      internalID: 1527478144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_94
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e61d22cad9f04488d1ccce8ab67e97
+      internalID: 1950864182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_95
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c6f65b9cf8ed443afbce3327506901
+      internalID: -1949862595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_96
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a088ca091ae8d6544b5717ac4b06b08d
+      internalID: -1968361885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_97
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059ab8706f0934747b72966f67a818b4
+      internalID: -1858040141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_98
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d72970523ec0a45b5150c117261d71
+      internalID: -728739704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_99
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 166
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93c6eb746a0be048b0f929e189315a8
+      internalID: 1189245263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbc24bef70632a4397df834625a8471
+      internalID: -275712772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_101
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 118
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46542ace53e30794595193232f54881f
+      internalID: -324767574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5948279f8a0447445a5648f4085983dc
+      internalID: -1038430528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_103
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 70
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24ce752b16a5d3408797fc59c9f2965
+      internalID: -154230040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9633f5c933a534ab78dec319df33b9
+      internalID: 1935578900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_105
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 22
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5efa520bb0515e4d867fd412c96d53b
+      internalID: 121974150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_106
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 22
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7797dddd492055c4ebef829644804da4
+      internalID: -1082790643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_107
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 22
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9ccbe9929210a4d9066d83f1e60d17
+      internalID: 1429679723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_Barriers_complete_48x48_108
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 22
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893275b42ca1c274394913a0ad6e5f34
+      internalID: -1979027337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      city_Barriers_complete_48x48_63: -858769425
+      city_Barriers_complete_48x48_12: -120694461
+      city_Barriers_complete_48x48_89: 758663022
+      city_Barriers_complete_48x48_66: 442555087
+      city_Barriers_complete_48x48_68: 614089158
+      city_Barriers_complete_48x48_38: -157196797
+      city_Barriers_complete_48x48_75: -184422384
+      city_Barriers_complete_48x48_90: -347806784
+      city_Barriers_complete_48x48_76: -355996655
+      city_Barriers_complete_48x48_23: -1678018047
+      city_Barriers_complete_48x48_0: 58717567
+      city_Barriers_complete_48x48_30: -1581134795
+      city_Barriers_complete_48x48_34: -613332859
+      city_Barriers_complete_48x48_73: 847495729
+      city_Barriers_complete_48x48_18: -1380667423
+      city_Barriers_complete_48x48_28: -1759706882
+      city_Barriers_complete_48x48_25: 1021166844
+      city_Barriers_complete_48x48_74: 1640243213
+      city_Barriers_complete_48x48_33: -740610770
+      city_Barriers_complete_48x48_71: 2093711807
+      city_Barriers_complete_48x48_77: 464122990
+      city_Barriers_complete_48x48_29: 93880478
+      city_Barriers_complete_48x48_67: -1707742032
+      city_Barriers_complete_48x48_61: -1754831452
+      city_Barriers_complete_48x48_55: -418048818
+      city_Barriers_complete_48x48_93: 1527478144
+      city_Barriers_complete_48x48_58: -1325942031
+      city_Barriers_complete_48x48_35: 735605140
+      city_Barriers_complete_48x48_4: 1195343377
+      city_Barriers_complete_48x48_17: 1669764762
+      city_Barriers_complete_48x48_79: 472232753
+      city_Barriers_complete_48x48_85: 1823324775
+      city_Barriers_complete_48x48_103: -154230040
+      city_Barriers_complete_48x48_1: -1732067143
+      city_Barriers_complete_48x48_86: 1804393298
+      city_Barriers_complete_48x48_10: 2057245041
+      city_Barriers_complete_48x48_43: 1446979928
+      city_Barriers_complete_48x48_81: -898508458
+      city_Barriers_complete_48x48_56: -781166470
+      city_Barriers_complete_48x48_40: -352358989
+      city_Barriers_complete_48x48_59: -1032338916
+      city_Barriers_complete_48x48_98: -728739704
+      city_Barriers_complete_48x48_62: -909949708
+      city_Barriers_complete_48x48_106: -1082790643
+      city_Barriers_complete_48x48_13: 354979094
+      city_Barriers_complete_48x48_107: 1429679723
+      city_Barriers_complete_48x48_54: -1030066625
+      city_Barriers_complete_48x48_87: -1238322226
+      city_Barriers_complete_48x48_19: 1316343243
+      city_Barriers_complete_48x48_72: -972643143
+      city_Barriers_complete_48x48_27: 513307481
+      city_Barriers_complete_48x48_39: 1804782132
+      city_Barriers_complete_48x48_100: -275712772
+      city_Barriers_complete_48x48_96: -1968361885
+      city_Barriers_complete_48x48_53: -1668046292
+      city_Barriers_complete_48x48_97: -1858040141
+      city_Barriers_complete_48x48_32: -578710857
+      city_Barriers_complete_48x48_24: -1738010064
+      city_Barriers_complete_48x48_95: -1949862595
+      city_Barriers_complete_48x48_51: 1576225318
+      city_Barriers_complete_48x48_36: -806349465
+      city_Barriers_complete_48x48_52: -1407596693
+      city_Barriers_complete_48x48_5: -701878909
+      city_Barriers_complete_48x48_64: -307447825
+      city_Barriers_complete_48x48_60: 1711227984
+      city_Barriers_complete_48x48_78: 848939394
+      city_Barriers_complete_48x48_82: 571255199
+      city_Barriers_complete_48x48_101: -324767574
+      city_Barriers_complete_48x48_7: 2112741446
+      city_Barriers_complete_48x48_50: -1201694233
+      city_Barriers_complete_48x48_49: -109036856
+      city_Barriers_complete_48x48_57: 1721901194
+      city_Barriers_complete_48x48_92: 650424173
+      city_Barriers_complete_48x48_105: 121974150
+      city_Barriers_complete_48x48_41: -1769073720
+      city_Barriers_complete_48x48_2: -490738093
+      city_Barriers_complete_48x48_104: 1935578900
+      city_Barriers_complete_48x48_31: -187150944
+      city_Barriers_complete_48x48_83: 110041171
+      city_Barriers_complete_48x48_94: 1950864182
+      city_Barriers_complete_48x48_99: 1189245263
+      city_Barriers_complete_48x48_37: 232669453
+      city_Barriers_complete_48x48_6: -1724324398
+      city_Barriers_complete_48x48_11: 425106069
+      city_Barriers_complete_48x48_70: -2122848091
+      city_Barriers_complete_48x48_42: 1554187526
+      city_Barriers_complete_48x48_14: 839007688
+      city_Barriers_complete_48x48_91: 490151995
+      city_Barriers_complete_48x48_108: -1979027337
+      city_Barriers_complete_48x48_16: 1104843104
+      city_Barriers_complete_48x48_9: -373834547
+      city_Barriers_complete_48x48_15: 1242349203
+      city_Barriers_complete_48x48_84: 62511862
+      city_Barriers_complete_48x48_45: 1000959062
+      city_Barriers_complete_48x48_48: 1941459950
+      city_Barriers_complete_48x48_102: -1038430528
+      city_Barriers_complete_48x48_21: 1594672265
+      city_Barriers_complete_48x48_3: 1031816285
+      city_Barriers_complete_48x48_46: -278743752
+      city_Barriers_complete_48x48_47: 678300047
+      city_Barriers_complete_48x48_69: 1094599767
+      city_Barriers_complete_48x48_26: -1047845271
+      city_Barriers_complete_48x48_88: 1340959992
+      city_Barriers_complete_48x48_20: -1410457483
+      city_Barriers_complete_48x48_44: 1951128349
+      city_Barriers_complete_48x48_80: 1258789623
+      city_Barriers_complete_48x48_8: -780573035
+      city_Barriers_complete_48x48_22: 386820809
+      city_Barriers_complete_48x48_65: -298721244
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
